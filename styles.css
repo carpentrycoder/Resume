@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    margin-bottom: 10pc;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.container mt-5{
+    margin-bottom: 100px;
+}
+
+.list-group {
+    display: flex;
+    justify-content: space-between; /* Align cards with space between them */
+
+}
+
+.row row-cols-1 row-cols-md-3 g-4{
+    padding-bottom: 30px;
+}
+
+.Certificates{
+    padding-top: 70px;
+}
+.card-title{
+    font-size: larger;
+    font-weight: bold;
+
+}
+
+.btn btn-primary{
+    margin-left: 20px;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-color: black;
+    border-radius: .25rem;
+}
+
+
+.col{
+    border: 1px solid rgb(2 2 2);
+}
+  
+
+
+
+/* Add more styles as needed */
