@@ -78,10 +78,24 @@ body {
     border-radius: .25rem;
 }
 
-
 .col{
-    border: 1px solid rgb(2 2 2);
+    border: 1px solid rgba(255, 253, 253, 0);
 }
+
+.card-header {
+    font-size: 23px; /* Update font size for card headers */
+    font-weight: bold;
+  }
+  
+  .card-body {
+    font-size: 16px; /* Update font size for card body */
+  }
+  
+  ul.list-unstyled li {
+    font-size: 20px; /* Update font size for list items */
+    margin-bottom: 1px; /* Add margin between list items */
+    font-weight:bold;
+  }
   
 
 
