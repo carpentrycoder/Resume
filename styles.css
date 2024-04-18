@@ -37,6 +37,16 @@ body {
     background-color: #555;
 }
 
+.current{
+    font-size: 30px;
+    font-weight:100px;
+
+}
+
+.mail{
+    font-size: 20px;
+}
+
 .container mt-5{
     margin-bottom: 100px;
 }
