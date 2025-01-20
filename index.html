@@ -1,288 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikhil Sutar - Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="styles.css" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .navbar {
-            background-color: #343a40 !important;
-        }
-        .jumbotron {
-            background-color: #343a40;
-            color: white;
-            padding: 80px 20px;
-            margin-bottom: 0;
-        }
-        .jumbotron h1 {
-            font-size: 48px;
-        }
-        .jumbotron p {
-            font-size: 18px;
-        }
-        .list-group-item {
-            background-color: transparent !important;
-            border: none !important;
-        }
-        .list-group-item h5 {
-            margin-bottom: 0;
-        }
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-            margin-top: 30px;
-            text-align: center;
-            position: initial;
-            bottom: 0;
-            width: 100%;
-        }
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
-            border: 5px solid #343a40;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikhil Sutar Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+  </style>
+  <style>
+    /* For browsers without native Tailwind scrollbar support */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #2d3748; /* Tailwind: bg-gray-800 */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to right, #4299e1, #9f7aea); /* Gradient thumb */
+      border-radius: 4px;
+    }
+  </style>
+  <script>
+    // Locomotive Scroll Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
+        smooth: true
+      });
+    });
+  </script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="navbar">
-            <a class="navbar-brand" href="#">Nikhil Sutar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Certificates">Certificates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>   
-                    <li class="nav-item">
-                      <a class="nav-link" href="https://drive.google.com/file/d/1YGi1TescXOU94zBTROEZpFY03j0Bqbk0/view?usp=sharing">Resume</a>
-                  </li>              
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="jumbotron text-center">
-        <img src="https://i.postimg.cc/yYDpfTN7/Whats-App-Image-2024-03-18-at-22-53-17-7710f7dc.jpg" alt="Profile Image" class="profile-image">
-        <div class="d-inline-block align-middle">
-            <h1>Hi 👋, I'm Nikhil Sutar</h1>
-            <p>Second year Artificial Intelligence and Data Science Engineering Student</p>
-            <p><strong>Coding Enthusiast</strong></p>
-            <p class="social">Connect with me: <a href="https://www.linkedin.com/in/nikhil-sutar-2nd-year-b5471b2b7/?trk=public-profile-join-page" target="_blank"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-linkedin"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                    </svg></a>
-                    <a href="https://github.com/carpentrycoder" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#ffffff" class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                      </svg></a>
+<body class="bg-gray-900 text-white">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-5 bg-gray-800">
+    <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Nikhil Sutar</h1>
+    <ul class="flex space-x-4">
+      <li><a href="#about" class="hover:text-blue-400">About</a></li>
+      <li><a href="#certificates" class="hover:text-blue-400">Certificates</a></li>
+      <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+      <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+    </ul>
+  </nav>
 
-                </p>
-                <a class="button_resume" href="https://drive.google.com/file/d/1YGi1TescXOU94zBTROEZpFY03j0Bqbk0/view?usp=sharing">
-                <button type="button" class="btn btn-primary btn-lg btn-resume">Resume</button>
-                </a>
-              </div>
-        
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center text-center p-10 fade-in">
+    <div class="relative group">
+      <!-- Gradient border around the photo -->
+      <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 blur-md opacity-50 group-hover:opacity-100 transition duration-300"></div>
+      <!-- Profile photo -->
+      <img src="https://i.postimg.cc/yYDpfTN7/Whats-App-Image-2024-03-18-at-22-53-17-7710f7dc.jpg" alt="Nikhil Sutar" 
+           class="rounded-full w-40 h-40 shadow-lg relative group-hover:scale-105 transition duration-300">
+    </div>
+    <!-- Animated text -->
+    <h2 class="text-3xl font-bold mt-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse">
+       Nikhil Sutar
+    </h2>
+    <p class="text-xl md:text-2xl text-bold mt-2">Artificial Intelligence and Data Science Engineering Student</p>
+    <p class="text-2xl mt-1">Coding Enthusiast</p>
+    <div class="flex space-x-4 mt-5">
+      <a href="https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" class="w-8">
+      </a>
+      <a href="https://github.com/carpentrycoder/" target="_blank">
+        <img src="https://img.icons8.com/ios-glyphs/48/ffffff/github.png" alt="GitHub" class="w-8">
+      </a>
+      <a href="https://www.hackerrank.com/profile/nikhilsutar621" target="_blank">
+        <img src="https://img.icons8.com/external-tal-revivo-filled-tal-revivo/48/000000/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-filled-tal-revivo.png" alt="HackerRank" class="w-8">
+      </a>
+      <a href="https://x.com/CodingD47206" target="_blank">
+        <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter" class="w-8">
+      </a>
+    </div>
+    <a href="https://drive.google.com/file/d/1YGi1TescXOU94zBTROEZpFY03j0Bqbk0/view?usp=sharing"><button class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download Resume</button></a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="p-10 bg-gray-700 fade-in">
+    <h2 class="text-2xl font-bold mb-4">About Me</h2>
+    <p class="mb-4">I'm all about leveraging <strong>tech</strong> to solve real-world problems and make life a bit smarter. Pursuing a degree in <strong>Artificial Intelligence and Data Science</strong>, I’m into programming, data analysis, and building impactful projects that resonate.</p>
+    <p class="mb-4">Currently vibing with <strong>Machine Learning, AI </strong> and diving deep into <strong>Data Science</strong>.</p>
+    <p>Hit me up at <a href="mailto:nikhilsutar621@gmail.com" class="text-blue-400 hover:text-blue-600 flex items-center"> <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik00NSwxNi4ybC01LDIuNzVsLTUsNC43NUwzNSw0MGg3YzEuNjU3LDAsMy0xLjM0MywzLTNWMTYuMnoiLz48cGF0aCBmaWxsPSIjMWU4OGU1IiBkPSJNMywxNi4ybDMuNjE0LDEuNzFMMTMsMjMuN1Y0MEg2Yy0xLjY1NywwLTMtMS4zNDMtMy0zVjE2LjJ6Ii8+PHBvbHlnb24gZmlsbD0iI2U1MzkzNSIgcG9pbnRzPSIzNSwxMS4yIDI0LDE5LjQ1IDEzLDExLjIgMTIsMTcgMTMsMjMuNyAyNCwzMS45NSAzNSwyMy43IDM2LDE3Ii8+PHBhdGggZmlsbD0iI2M2MjgyOCIgZD0iTTMsMTIuMjk4VjE2LjJsMTAsNy41VjExLjJMOS44NzYsOC44NTlDOS4xMzIsOC4zMDEsOC4yMjgsOCw3LjI5OCw4aDBDNC45MjQsOCwzLDkuOTI0LDMsMTIuMjk4eiIvPjxwYXRoIGZpbGw9IiNmYmMwMmQiIGQ9Ik00NSwxMi4yOThWMTYuMmwtMTAsNy41VjExLjJsMy4xMjQtMi4zNDFDMzguODY4LDguMzAxLDM5Ljc3Miw4LDQwLjcwMiw4aDAgQzQzLjA3Niw4LDQ1LDkuOTI0LDQ1LDEyLjI5OHoiLz48L3N2Zz4=" class="animate-bounce w-6 h-6 mr-2"> nikhilsutar621@gmail.com</a> or just say hi—I’m always up for a chat!</p>
+</section>
+
+
+
+  <!-- Certificates Section -->
+<!-- Certificates Section -->
+<section id="certificates" class="p-10 bg-gray-800 fade-in">
+  <h2 class="text-3xl font-bold text-white mb-6 text-center">Certificates</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Java Certificate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" alt="Java Certificate" class="w-full h-50 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-white mb-2">Java</h5>
+        <p class="text-gray-400 mb-4">OOPs, Swing, Core Java, and Collection Framework</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Out on LinkedIn
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- Python & Django Certificate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="Python & Django Certificate" class="w-full h-50 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-white mb-2">Python & Django</h5>
+        <p class="text-gray-400 mb-4">Versatile Python and Django basics - OOP, scripting, views, and templates.</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Out on LinkedIn
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- JavaScript Certificate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" alt="JavaScript Certificate" class="w-full h-50 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-white mb-2">JavaScript</h5>
+        <p class="text-gray-400 mb-4">JS essentials: variables, functions, DOM, events, async, ES6, and more.</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Out on LinkedIn
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body><!-- Skills Section -->
+<section id="skills" class="p-10 bg-gray-800 fade-in">
+  <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <!-- Languages -->
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-blue-800">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/programming.png" alt="Languages" class="w-16 mb-3">
+      <h3 class="text-xl font-semibold text-white mb-2">Languages</h3>
+      <div class="text-center text-white">
+        <span class="block">C</span>
+        <span class="block">Java</span>
+        <span class="block">Python</span>
+        <span class="block">JavaScript</span>
+        <span class="block">SQL</span>
+      </div>
     </div>
 
-    <div class="container mt-5">
-        <div id="about" class="mb-5">
-            <h2>About Me</h2>
-            <p class="current">I'm currently working on <strong>MERN and Data Science</strong>            
-              <p class="mail">Feel free to reach me at <a href="mailto:nikhilsutar621@gmail.com">nikhilsutar621@gmail.com</a></p>
-          </p>
-            <div class="container mt-4">
-              <div class="row">
-                <div class="col-lg-4 mb-4">
-                  <div class="card">
-                    <div class="card-header bg-primary text-white">
-                      Languages
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled">
-                        <li>C</li>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="col-lg-4 mb-4">
-                  <div class="card">
-                    <div class="card-header bg-dark text-white">
-                      Data Science Libraries
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled">
-                        <li>Numpy</li>
-                        <li>Pandas</li>
-                        <li>MatplotLib</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="col-lg-4 mb-4">
-                  <div class="card">
-                    <div class="card-header bg-success text-white">
-                      Frameworks
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled">
-                        <li>Flask</li>
-                        <li>Django</li>
-                        <li>Bootstrap</li>
-                        <li>Tailwind CSS</li>
-                        <li>React.js <strong> (Learning)</strong></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="col-lg-4 mb-4">
-                  <div class="card">
-                    <div class="card-header bg-info text-white">
-                      Tools
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled">
-                        <li>Git Desktop</li>
-                        <li>Github</li>
-                        <li>CodeSandbox.io</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="col-lg-4 mb-4">
-                  <div class="card">
-                    <div class="card-header bg-warning text-white">
-                      API , Hosting , etc.,
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled">
-                        <li>Rapid-API</li>
-                        <li>Vercel</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-                      <!-- Add more content here if needed -->
-        </div>
-
-        <div id="projects">
-            <h2>Projects</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png" class="card-img-top" alt="SutarFlix">
-                    <div class="card-body">
-                      <h5 class="card-title">Success Classes Of Engineering</h5>
-                      <p class="card-text">Building Flask-based Website for Engineering Classes </p>
-                      <a href="https://success-classes-of-engineering.vercel.app/"><button type="button" class="btn btn-primary">Live Link</button></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.ibb.co/F85KqGy/dashboard.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Tourmate</h5>
-                      <p class="card-text">Java Swing based Desktop application </p>
-                      <a href="https://www.linkedin.com/posts/nikhil-sutar-2nd-year-b5471b2b7_tourmate-travelapp-javadevelopment-activity-7183136207487270922-4OO3?utm_source=share&utm_medium=member_desktop"><button type="button" class="btn btn-primary">Check Here</button></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.postimg.cc/Qd9HLP6g/1712140961216.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Sutar.ka.Weather.App</h5>
-                      <p class="card-text">Weather fetching Web Application API-Based.</p>
-                      <a href="https://carpentrycoder.github.io/Sutar.ka.Weather.app/"><button type="button" class="btn btn-primary">Live Link</button></a>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-<hr>
-        <div id="Certificates" class="Certificates">
-            <h2>Certificates</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" class="card-img-top" alt="SutarFlix">
-                    <div class="card-body">
-                      <h5 class="card-title">Java</h5>
-                      <p class="card-text">OPP's,Swing,CORE Java,Collection Frame Work </p>
-                      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7181324915462066176/?originTrackingId=t5CeVHtmSFa2GcrupUf2GQ%3D%3D"><button type="button" class="btn btn-primary">Check Out on linkedIn </button></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="python certificate">
-                    <div class="card-body">
-                      <h5 class="card-title">Python & D-Jango</h5>
-                      <p class="card-text">Python: Versatile language covering OOP, scripting. Beginner Django: Intro to web dev with Django -views, templates</p>
-                      <a href="https://www.linkedin.com/posts/nikhil-sutar-2nd-year-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-IoOd?utm_source=share&utm_medium=member_desktop"><button type="button" class="btn btn-primary">Check Out on linkedIn</button></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Java-script</h5>
-                      <p class="card-text">JS topics: variables, functions, loops, objects, DOM, events, async, modules, fetch, ES6 features.</p>
-                      <a href="https://carpentrycoder.github.io/Sutar.ka.Weather.app/"><button type="button" class="btn btn-primary">Check Here</button></a>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-lime-600 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/programming.png" alt="CS Fundamentals" class="w-16 mb-3">
+      <h3 class="text-xl font-semibold text-white mb-2">CS Fundamentals</h3>
+      <div class="text-center text-white">
+        <span class="block">DLCA - Digital Logic Computer Architecture</span>
+        <span class="block">MP - Microprocessor</span>
+        <span class="block">DSGT - Data Structures and Graph Theory</span>
+        <span class="block">OS - Operating Systems</span>
+        <span class="block">DBMS - Database Management Systems</span>
+        <span class="block">AOA - Analysis of Algorithms</span>
+        <span class="block">CN - Computer Networks</span>
+      </div>
+    </div>
+    
+    <!-- Frameworks -->
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-yellow-800">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAlUlEQVR4nO3WORbDIBBEQe5/6XYsJWM02rCrUj2xfAgYAwAAAPh7mdT9/27lAac5YF5OgEqaRfNrAcbk9+VFgK3ZQMuLAHOqgHc7/QZUBNjJw0ZXmhNes63j6wEA+FqaD4+8nACVNIvm5QSopCg2XXQ1EWBrNtDyIsCcKuDdTr8BFQF28rDRleaE12zr+HoAAAAAxs4HwQrztRGOdiYAAAAASUVORK5CYII=" alt="overview-pages-4" alt="Curly Braces Logo" class="w-16 mb-2">
+      <h3 class="text-xl font-semibold text-white mb-2">Frameworks</h3>
+      <div class="text-center text-white">
+        <span class="block">Flask</span>
+        <span class="block">Django</span>
+        <span class="block">Bootstrap</span>
+        <span class="block">Tailwind CSS</span>
+        <span class="block">React.js <strong></strong></span>
+      </div>
     </div>
 
-   
+    <!-- Data Science Libraries -->
+   <!-- Data Science Libraries -->
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-green-800">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/database.png" alt="Data Science Libraries" class="w-16 mb-3">
+      <h3 class="text-xl font-semibold text-white mb-2">Data Science Stuff</h3>
+      <div class="text-center text-white mb-4">
+        <table class="w-full text-left table-auto">
+          <thead>
+            <tr>
+              <th class="px-4 py-2 bg-gray-600 text-white">Libraries</th>
+              <th class="px-4 py-2 bg-gray-600 text-white">Tools</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-800">
+              <td class="px-4 py-2">Numpy</td>
+              <td class="px-4 py-2">Jupyter Notebook</td>
+            </tr>
+            <tr class="bg-gray-700">
+              <td class="px-4 py-2">Pandas</td>
+              <td class="px-4 py-2">Power BI</td>
+            </tr>
+            <tr class="bg-gray-800">
+              <td class="px-4 py-2">Matplotlib</td>
+              <td class="px-4 py-2">Excel</td>
+            </tr>
+            <tr class="bg-gray-700">
+              <td class="px-4 py-2">scikit-learn</td>
+              <td class="px-4 py-2">N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-    <footer class="footer">
-        <div class="container-footer">
-            <p>&copy; 2024 Nikhil Sutar. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Tools -->
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-indigo-800">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/git.png" alt="Tools" class="w-16 mb-3">
+      <h3 class="text-xl font-semibold text-white mb-2">Tools</h3>
+      <div class="text-center text-white">
+        <span class="block">Git Desktop</span>
+        <span class="block">Github</span>
+        <span class="block">CodeSandbox.io</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-pink-900">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/database.png" alt="Databases" class="w-16 mb-3">
+      <h3 class="text-xl font-semibold text-white mb-2">Databases</h3>
+      <div class="text-center text-white">
+        <span class="block">MongoDB</span>
+        <span class="block">SQLite3</span>
+        <span class="block">MySQL</span>
+        <span class="block">PostgreSQL</span>
+        <span class="block">Oracle</span>
+      </div>
+    </div>
+
+    <!-- API, Hosting, etc -->
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-red-800">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/api.png" alt="API, Hosting, etc." class="w-16 mb-3">
+      <h3 class="text-xl font-semibold text-white mb-2">API, Hosting, etc.</h3>
+      <div class="text-center text-white">
+        <span class="block">Rapid-API</span>
+        <span class="block">Vercel</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Projects Section -->
+<!-- Projects Section -->
+<section id="projects" class="py-10 bg-gray-700 text-white">
+  <h2 class="text-3xl font-bold text-center mb-8">💡 Projects</h2>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-8">
+    
+    <!-- Project 1: Success Classes Of Engineering -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png" alt="SutarFlix" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold mb-2">🚀 Success Classes Of Engineering</h5>
+        <p class="text-gray-400 mb-3">Building a Flask-based website for Engineering Classes.</p>
+        <a href="https://success-classes-of-engineering.vercel.app/">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Live Link
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2: Tourmate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.ibb.co/F85KqGy/dashboard.png" alt="Tourmate" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold mb-2">🌍 Tourmate</h5>
+        <p class="text-gray-400 mb-3">Java Swing-based Desktop application.</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_tourmate-travelapp-javadevelopment-activity-7183136207487270922-nO6G?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">
+            Check Here
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3: Sutar.ka.Weather.App -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/Qd9HLP6g/1712140961216.png" alt="Sutar.ka.Weather.App" class="w-full h-48 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold mb-2">🌦️ Sutar.ka.Weather.App</h5>
+        <p class="text-gray-400 mb-3">Weather fetching Web Application using API.</p>
+        <a href="https://carpentrycoder.github.io/Sutar.ka.Weather.app/">
+          <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300">
+            Live Link
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 1: Sutarflix -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/kgpjnGVK/1712671865805.jpg" alt="Sutarflix" class="w-full h-48 object-cover object-top">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold mb-2">🎬 Sutarflix</h5>
+        <p class="text-gray-400 mb-3">Flask-based Website for Streaming Services.</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flaskdevelopment-webdevelopment-moviestreaming-activity-7180954773746044928-raXZ?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Here
+          </button>
+        </a>
+      </div>
+    </div>
+
+<!-- Project 2: Sutar_ki_dukaan -->
+<div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+  <img src="https://i.postimg.cc/T1bxcFZH/Screenshot-2025-01-20-144943.png" alt="Sutar_ki_dukaan" class="w-full h-48 object-cover object-top">
+  <div class="p-5">
+    <h5 class="text-xl font-semibold mb-2">🛒 Sutar_ki_dukaan</h5>
+    <p class="text-gray-400 mb-3">E-commerce platform with MERN stack.</p>
+    <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-activity-7188483974233473024-9AaZ?utm_source=share&utm_medium=member_desktop">
+      <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">
+        Check Here
+      </button>
+    </a>
+  </div>
+</div>
+
+<!-- Project 3: E-commerce Sales Prediction -->
+<div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+  <img src="https://i.postimg.cc/Wz8nx1LD/1732333182416.jpg" alt="E-commerce Sales Prediction" class="w-full h-48 object-cover object-top">
+  <div class="p-5">
+    <h5 class="text-xl font-semibold mb-2">📊 E-commerce Sales Prediction</h5>
+    <p class="text-gray-400 mb-3">Machine Learning-based Sales Prediction System.</p>
+    <p class="font-bold text-xl text-red-400 mb-3">Ongoing Project</p>
+    <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_datavisualization-predictiveanalytics-ai-activity-7265932014648786944-ML94?utm_source=share&utm_medium=member_desktop">
+      <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300">
+        Check Here
+      </button>
+    </a>
+  </div>
+</div>
+
+    
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="p-5 bg-gray-900 text-center fade-in">
+  <p>&copy; 2025 Nikhil Sutar. All Rights Reserved.</p>
+</footer>
 
 
-   
 
-
-</body>
 </html>
