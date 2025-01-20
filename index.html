@@ -22,10 +22,10 @@
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #2d3748; /* Tailwind: bg-gray-800 */
+      background: #222a39; /* Tailwind: bg-gray-800 */
     }
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to right, #4299e1, #9f7aea); /* Gradient thumb */
+      background: linear-gradient(to right, #2394f0, #642bd8); /* Gradient thumb */
       border-radius: 4px;
     }
   </style>
@@ -41,15 +41,16 @@
 </head>
 <body class="bg-gray-900 text-white">
   <!-- Navbar -->
-  <nav class="flex justify-between items-center p-5 bg-gray-800">
-    <h1 class="text-lg sm:text-xl md:text-2xl font-bold">Nikhil Sutar</h1>
-    <ul class="flex space-x-4">
+  <nav class="flex justify-center items-center p-5 bg-gray-800">
+    <ul class="flex space-x-4 text-xl text-white">
       <li><a href="#about" class="hover:text-blue-400">About</a></li>
       <li><a href="#certificates" class="hover:text-blue-400">Certificates</a></li>
       <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
       <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
     </ul>
   </nav>
+  
+  
 
   <!-- Hero Section -->
   <section class="flex flex-col items-center text-center p-10 fade-in">
@@ -61,7 +62,7 @@
            class="rounded-full w-40 h-40 shadow-lg relative group-hover:scale-105 transition duration-300">
     </div>
     <!-- Animated text -->
-    <h2 class="text-3xl font-bold mt-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse">
+    <h2 class="text-4xl font-bold mt-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse">
        Nikhil Sutar
     </h2>
     <p class="text-xl md:text-2xl text-bold mt-2">Artificial Intelligence and Data Science Engineering Student</p>
@@ -88,62 +89,26 @@
     <h2 class="text-2xl font-bold mb-4">About Me</h2>
     <p class="mb-4">I'm all about leveraging <strong>tech</strong> to solve real-world problems and make life a bit smarter. Pursuing a degree in <strong>Artificial Intelligence and Data Science</strong>, I’m into programming, data analysis, and building impactful projects that resonate.</p>
     <p class="mb-4">Currently vibing with <strong>Machine Learning, AI </strong> and diving deep into <strong>Data Science</strong>.</p>
-    <p>Hit me up at <a href="mailto:nikhilsutar621@gmail.com" class="text-blue-400 hover:text-blue-600 flex items-center"> <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik00NSwxNi4ybC01LDIuNzVsLTUsNC43NUwzNSw0MGg3YzEuNjU3LDAsMy0xLjM0MywzLTNWMTYuMnoiLz48cGF0aCBmaWxsPSIjMWU4OGU1IiBkPSJNMywxNi4ybDMuNjE0LDEuNzFMMTMsMjMuN1Y0MEg2Yy0xLjY1NywwLTMtMS4zNDMtMy0zVjE2LjJ6Ii8+PHBvbHlnb24gZmlsbD0iI2U1MzkzNSIgcG9pbnRzPSIzNSwxMS4yIDI0LDE5LjQ1IDEzLDExLjIgMTIsMTcgMTMsMjMuNyAyNCwzMS45NSAzNSwyMy43IDM2LDE3Ii8+PHBhdGggZmlsbD0iI2M2MjgyOCIgZD0iTTMsMTIuMjk4VjE2LjJsMTAsNy41VjExLjJMOS44NzYsOC44NTlDOS4xMzIsOC4zMDEsOC4yMjgsOCw3LjI5OCw4aDBDNC45MjQsOCwzLDkuOTI0LDMsMTIuMjk4eiIvPjxwYXRoIGZpbGw9IiNmYmMwMmQiIGQ9Ik00NSwxMi4yOThWMTYuMmwtMTAsNy41VjExLjJsMy4xMjQtMi4zNDFDMzguODY4LDguMzAxLDM5Ljc3Miw4LDQwLjcwMiw4aDAgQzQzLjA3Niw4LDQ1LDkuOTI0LDQ1LDEyLjI5OHoiLz48L3N2Zz4=" class="animate-bounce w-6 h-6 mr-2"> nikhilsutar621@gmail.com</a> or just say hi—I’m always up for a chat!</p>
+    <p>Hit me up at <a href="mailto:nikhilsutar621@gmail.com" class="text-blue-400 font-bold hover:text-blue-600 flex items-center"> <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik00NSwxNi4ybC01LDIuNzVsLTUsNC43NUwzNSw0MGg3YzEuNjU3LDAsMy0xLjM0MywzLTNWMTYuMnoiLz48cGF0aCBmaWxsPSIjMWU4OGU1IiBkPSJNMywxNi4ybDMuNjE0LDEuNzFMMTMsMjMuN1Y0MEg2Yy0xLjY1NywwLTMtMS4zNDMtMy0zVjE2LjJ6Ii8+PHBvbHlnb24gZmlsbD0iI2U1MzkzNSIgcG9pbnRzPSIzNSwxMS4yIDI0LDE5LjQ1IDEzLDExLjIgMTIsMTcgMTMsMjMuNyAyNCwzMS45NSAzNSwyMy43IDM2LDE3Ii8+PHBhdGggZmlsbD0iI2M2MjgyOCIgZD0iTTMsMTIuMjk4VjE2LjJsMTAsNy41VjExLjJMOS44NzYsOC44NTlDOS4xMzIsOC4zMDEsOC4yMjgsOCw3LjI5OCw4aDBDNC45MjQsOCwzLDkuOTI0LDMsMTIuMjk4eiIvPjxwYXRoIGZpbGw9IiNmYmMwMmQiIGQ9Ik00NSwxMi4yOThWMTYuMmwtMTAsNy41VjExLjJsMy4xMjQtMi4zNDFDMzguODY4LDguMzAxLDM5Ljc3Miw4LDQwLjcwMiw4aDAgQzQzLjA3Niw4LDQ1LDkuOTI0LDQ1LDEyLjI5OHoiLz48L3N2Zz4=" class="animate-bounce w-6 h-6 mr-2"> nikhilsutar621@gmail.com</a> or just say hi—I’m always up for a chat!</p>
 </section>
 
 
 
   <!-- Certificates Section -->
-<!-- Certificates Section -->
-<section id="certificates" class="p-10 bg-gray-800 fade-in">
-  <h2 class="text-3xl font-bold text-white mb-6 text-center">Certificates</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Java Certificate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" alt="Java Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">Java</h5>
-        <p class="text-gray-400 mb-4">OOPs, Swing, Core Java, and Collection Framework</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- Python & Django Certificate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="Python & Django Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">Python & Django</h5>
-        <p class="text-gray-400 mb-4">Versatile Python and Django basics - OOP, scripting, views, and templates.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- JavaScript Certificate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" alt="JavaScript Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">JavaScript</h5>
-        <p class="text-gray-400 mb-4">JS essentials: variables, functions, DOM, events, async, ES6, and more.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
 </body><!-- Skills Section -->
 <section id="skills" class="p-10 bg-gray-800 fade-in">
   <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-green-800">
+      <h3 class="text-2xl font-semibold text-center text-white mb-8 bg-grey-600">Project Based Experience in Languages
+      </h3>
+      <div class="relative w-64 h-64">
+        <canvas id="languagesChart"></canvas>
+      </div>
+    </div>    
+
     <!-- Languages -->
     <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-blue-800">
       <img src="https://img.icons8.com/ios-filled/50/ffffff/programming.png" alt="Languages" class="w-16 mb-3">
@@ -157,7 +122,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-lime-600 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
+    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-lime-600 ">
       <img src="https://img.icons8.com/ios-filled/50/ffffff/programming.png" alt="CS Fundamentals" class="w-16 mb-3">
       <h3 class="text-xl font-semibold text-white mb-2">CS Fundamentals</h3>
       <div class="text-center text-white">
@@ -249,11 +214,57 @@
       <div class="text-center text-white">
         <span class="block">Rapid-API</span>
         <span class="block">Vercel</span>
+        <span class="block">Open Source API</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Certificates Section -->
+<section id="certificates" class="p-10 bg-gray-800 fade-in">
+  <h2 class="text-3xl font-bold text-white mb-6 text-center">Certificates</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Java Certificate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" alt="Java Certificate" class="w-full h-50 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-white mb-2">Java</h5>
+        <p class="text-gray-400 mb-4">OOPs, Swing, Core Java, and Collection Framework</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Out on LinkedIn
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- Python & Django Certificate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="Python & Django Certificate" class="w-full h-50 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-white mb-2">Python & Django</h5>
+        <p class="text-gray-400 mb-4">Versatile Python and Django basics - OOP, scripting, views, and templates.</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Out on LinkedIn
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- JavaScript Certificate -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
+      <img src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" alt="JavaScript Certificate" class="w-full h-50 object-cover">
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-white mb-2">JavaScript</h5>
+        <p class="text-gray-400 mb-4">JS essentials: variables, functions, DOM, events, async, ES6, and more.</p>
+        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT?utm_source=share&utm_medium=member_desktop">
+          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
+            Check Out on LinkedIn
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Projects Section -->
 <!-- Projects Section -->
@@ -356,6 +367,41 @@
   <p>&copy; 2025 Nikhil Sutar. All Rights Reserved.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('languagesChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Java', 'Python', 'HTML', 'JavaScript', 'CSS', 'C','SQL'],
+      datasets: [{
+        label: 'Languages',
+        data: [52.8, 50.36, 13.1, 7.6, 4.44, 1.7,30],
+        backgroundColor: [
+          '#FF6384', // Java
+          '#36A2EB', // Python
+          '#FFCE56', // HTML
+          '#4BC0C0', // JavaScript
+          '#9966FF', // CSS
+          '#FF9F40', // C
+          '#4de028', // Sql
+        ],
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#ffffff', // White text for legend
+          }
+        }
+      }
+    }
+  });
+</script>
 
 
 </html>
