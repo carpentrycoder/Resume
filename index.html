@@ -28,6 +28,31 @@
       background: linear-gradient(to right, #2394f0, #642bd8); /* Gradient thumb */
       border-radius: 4px;
     }
+    
+     /* Typing animation styles */
+  .typing-animation {
+    animation: typing 3s steps(20, end), blink 0.1s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+
   </style>
   <script>
     // Locomotive Scroll Initialization
@@ -39,6 +64,8 @@
     });
   </script>
 </head>
+
+
 <body class="bg-gray-900 text-white">
   <!-- Navbar -->
   <nav class="flex justify-center items-center p-5 bg-gray-800">
@@ -61,10 +88,12 @@
       <img src="https://i.postimg.cc/yYDpfTN7/Whats-App-Image-2024-03-18-at-22-53-17-7710f7dc.jpg" alt="Nikhil Sutar" 
            class="rounded-full w-40 h-40 shadow-lg relative group-hover:scale-105 transition duration-300">
     </div>
+    <div class="relative overflow-hidden h-12 mt-5"></div>
     <!-- Animated text -->
-    <h2 class="text-4xl font-bold mt-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse">
+    <h2 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 whitespace-nowrap typing-animation">
       Nikhil M. Sutar
     </h2>
+    </div>
     <p class="text-xl md:text-2xl text-bold mt-2">Artificial Intelligence and Data Science Engineering Student</p>
     <p class="text-2xl mt-1">Coding Enthusiast</p>
     <div class="flex space-x-4 mt-5">
@@ -433,6 +462,9 @@
       }
     }
   });
+
+  
+
 </script>
 
 
