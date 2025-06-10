@@ -52,7 +52,6 @@
     }
   }
 
-
   </style>
   <script>
     // Locomotive Scroll Initialization
@@ -65,7 +64,6 @@
   </script>
 </head>
 
-
 <body class="bg-gray-900 text-white">
   <!-- Navbar -->
   <nav class="flex justify-center items-center p-5 bg-gray-800">
@@ -76,8 +74,6 @@
       <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
     </ul>
   </nav>
-  
-  
 
   <!-- Hero Section -->
   <section class="flex flex-col items-center text-center p-10 fade-in">
@@ -110,7 +106,8 @@
         <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter" class="w-8">
       </a>
     </div>
-    <a href="https://drive.google.com/file/d/1YGi1TescXOU94zBTROEZpFY03j0Bqbk0/view?usp=sharing"><button class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download Resume</button></a>
+    <a href="https://drive.google.com/file/d/100VcotnqfaToN3hwNQEmqXEo4ruCuAEs/view?usp=sharing"><button class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download Resume</button></a>
+     
   </section>
 
   <!-- About Section -->
@@ -120,12 +117,81 @@
     <p class="mb-4">Currently vibing with <strong>Machine Learning, AI </strong> and diving deep into <strong>Data Science</strong>.</p>
     <p>Hit me up at <a href="mailto:nikhilsutar621@gmail.com" class="text-blue-400 font-bold hover:text-blue-600 flex items-center"> <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik00NSwxNi4ybC01LDIuNzVsLTUsNC43NUwzNSw0MGg3YzEuNjU3LDAsMy0xLjM0MywzLTNWMTYuMnoiLz48cGF0aCBmaWxsPSIjMWU4OGU1IiBkPSJNMywxNi4ybDMuNjE0LDEuNzFMMTMsMjMuN1Y0MEg2Yy0xLjY1NywwLTMtMS4zNDMtMy0zVjE2LjJ6Ii8+PHBvbHlnb24gZmlsbD0iI2U1MzkzNSIgcG9pbnRzPSIzNSwxMS4yIDI0LDE5LjQ1IDEzLDExLjIgMTIsMTcgMTMsMjMuNyAyNCwzMS45NSAzNSwyMy43IDM2LDE3Ii8+PHBhdGggZmlsbD0iI2M2MjgyOCIgZD0iTTMsMTIuMjk4VjE2LjJsMTAsNy41VjExLjJMOS44NzYsOC44NTlDOS4xMzIsOC4zMDEsOC4yMjgsOCw3LjI5OCw4aDBDNC45MjQsOCwzLDkuOTI0LDMsMTIuMjk4eiIvPjxwYXRoIGZpbGw9IiNmYmMwMmQiIGQ9Ik00NSwxMi4yOThWMTYuMmwtMTAsNy41VjExLjJsMy4xMjQtMi4zNDFDMzguODY4LDguMzAxLDM5Ljc3Miw4LDQwLjcwMiw4aDAgQzQzLjA3Niw4LDQ1LDkuOTI0LDQ1LDEyLjI5OHoiLz48L3N2Zz4=" class="animate-bounce w-6 h-6 mr-2"> nikhilsutar621@gmail.com</a> or just say hi—I’m always up for a chat!</p>
 </section>
-
-
-
   <!-- Certificates Section -->
 
-</body><!-- Skills Section -->
+</body>
+<!-- Badges Section -->
+<section id="skills" class="p-6 sm:p-10 bg-gray-500 fade-in overflow-hidden">
+  <h2 class="text-3xl font-bold mb-8 text-center">
+    Badges
+  </h2>
+
+  <!-- Scroll Container -->
+  <div id="carousel" class="flex gap-6 items-center w-full overflow-x-auto scroll-smooth whitespace-nowrap no-scrollbar">
+    <!-- Images -->
+    <img src="https://i.postimg.cc/V6zXKZNb/aws-educate-getting-started-with-databases.png" alt="AWS Educate" class="badge-img" />
+  </div>
+</section>
+
+<style>
+  .badge-img {
+    width: 10rem; /* w-40 */
+    @media (min-width: 640px) {
+      width: 13rem; /* sm:w-52 */
+    }
+    @media (min-width: 768px) {
+      width: 16rem; /* md:w-64 */
+    }
+    object-fit: contain;
+    display: inline-block;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+<!---
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("carousel");
+
+    if (!carousel) return;
+
+    let scrollAmount = 2;
+    let scrollInterval;
+
+    function startScroll() {
+      scrollInterval = setInterval(() => {
+        carousel.scrollLeft += scrollAmount;
+
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+          carousel.scrollLeft = 0; // Loop back
+        }
+      }, 20);
+    }
+
+    function stopScroll() {
+      clearInterval(scrollInterval);
+    }
+
+    // Optional: Clone first few items to make seamless looping
+    const cloneCount = 3;
+    for (let i = 0; i < cloneCount; i++) {
+      const clone = carousel.children[i].cloneNode(true);
+      carousel.appendChild(clone);
+    }
+
+    carousel.addEventListener("mouseenter", stopScroll);
+    carousel.addEventListener("mouseleave", startScroll);
+
+    startScroll();
+  });
+</script>
+-->
+<!-- Skills Section -->
 <section id="skills" class="p-10 bg-gray-800 fade-in">
   <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -252,8 +318,6 @@
 <section id="certificates" class="p-10 bg-gray-800 fade-in">
   <h2 class="text-3xl font-bold text-white mb-6 text-center">Certificates</h2>
       <!-- Hackathon Certificate -->
-      
-
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out border-2 border-yellow-500">
@@ -335,19 +399,13 @@
         </a>
       </div>
     </div>
-
-
-
   </div>
 </section>
-
   <!-- Projects Section -->
 <!-- Projects Section -->
 <section id="projects" class="py-10 bg-gray-700 text-white">
   <h2 class="text-3xl font-bold text-center mb-8">💡 Projects</h2>
-  
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-8">
-    
     <!-- Project 1: Success Classes Of Engineering -->
     <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
       <img src="https://i.postimg.cc/508hbcGN/pranav-interiors-and-decorators-onrender-ss.jpg" alt="Pranav Interiors" class="w-full h-50 object-cover">
@@ -361,8 +419,6 @@
         </a>
       </div>
     </div>
-    
-
     <!-- Project 1: Success Classes Of Engineering -->
     <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
       <img src="https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png" alt="SutarFlix" class="w-full h-48 object-cover">
@@ -376,7 +432,6 @@
         </a>
       </div>
     </div>
-
     <!-- Project 2: Tourmate -->
     <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
       <img src="https://i.ibb.co/F85KqGy/dashboard.png" alt="Tourmate" class="w-full h-48 object-cover">
@@ -390,7 +445,6 @@
         </a>
       </div>
     </div>
-
     <!-- Project 3: Sutar.ka.Weather.App -->
     <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
       <img src="https://i.postimg.cc/Qd9HLP6g/1712140961216.png" alt="Sutar.ka.Weather.App" class="w-full h-48 object-cover">
@@ -404,7 +458,6 @@
         </a>
       </div>
     </div>
-
     <!-- Project 1: Sutarflix -->
     <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
       <img src="https://i.postimg.cc/kgpjnGVK/1712671865805.jpg" alt="Sutarflix" class="w-full h-48 object-cover object-top">
@@ -418,7 +471,6 @@
         </a>
       </div>
     </div>
-
 <!-- Project 2: Sutar_ki_dukaan -->
 <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
   <img src="https://i.postimg.cc/T1bxcFZH/Screenshot-2025-01-20-144943.png" alt="Sutar_ki_dukaan" class="w-full h-48 object-cover object-top">
@@ -432,7 +484,6 @@
     </a>
   </div>
 </div>
-
 <!-- Project 3: E-commerce Sales Prediction -->
 <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
   <img src="https://i.postimg.cc/CLNtZ9Fm/sales-gyaan.png" alt="E-commerce Sales Prediction" class="w-full h-48 object-cover object-top">
@@ -445,9 +496,7 @@
       </button>
     </a>
   </div>
-</div>
-
-    
+</div> 
   </div>
 </section>
 
@@ -490,10 +539,5 @@
       }
     }
   });
-
-  
-
 </script>
-
-
 </html>
