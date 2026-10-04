@@ -1,546 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nikhil Sutar Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-  <style>
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-in {
-      animation: fadeIn 1.5s ease-in-out;
-    }
-  </style>
-  <style>
-    /* For browsers without native Tailwind scrollbar support */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #222a39; /* Tailwind: bg-gray-800 */
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to right, #2394f0, #642bd8); /* Gradient thumb */
-      border-radius: 4px;
-    }
-    
-     /* Typing animation styles */
-  .typing-animation {
-    animation: typing 3s steps(20, end), blink 0.9s step-end infinite;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #ffffff00;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0%;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-
-  </style>
-  <script>
-    // Locomotive Scroll Initialization
-    document.addEventListener('DOMContentLoaded', () => {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('#main'),
-        smooth: true
-      });
-    });
-  </script>
-</head>
-
-<body class="bg-gray-900 text-white">
-  <!-- Navbar -->
-  <nav class="flex justify-center items-center p-5 bg-gray-800">
-    <ul class="flex space-x-4 text-xl text-white">
-      <li><a href="#about" class="hover:text-blue-400">About</a></li>
-      <li><a href="#certificates" class="hover:text-blue-400">Certificates</a></li>
-      <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-      <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Hero Section -->
-  <section class="flex flex-col items-center text-center p-10 fade-in">
-    <div class="relative group">
-      <!-- Gradient border around the photo -->
-      <div class="absolute -inset-1 rounded-full group-hover:opacity-100 transition duration-300"></div>
-      <!-- Profile photo -->
-      <img src="https://i.postimg.cc/J7g7ZvcW/IMG-20260908-091428.png" alt="Nikhil Sutar" 
-           class="rounded-full w-40 h-40 shadow-lg relative group-hover:scale-105 transition duration-300">
-    </div>
-    <div class="relative overflow-hidden h-12 mt-5"></div>
-    <!-- Animated text -->
-    <h2 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 whitespace-nowrap typing-animation">
-      Nikhil M. Sutar
-    </h2>
-    </div>
-    <p class="text-xl md:text-2xl text-bold mt-2">Artificial Intelligence and Data Science Engineering Student</p>
-    
-    <div class="flex space-x-4 mt-5">
-      <a href="https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/" target="_blank">
-        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" class="w-8">
-      </a>
-      <a href="https://github.com/carpentrycoder/" target="_blank">
-        <img src="https://img.icons8.com/ios-glyphs/48/ffffff/github.png" alt="GitHub" class="w-8">
-      </a>
-      <a href="https://www.hackerrank.com/profile/nikhilsutar621" target="_blank">
-        <img src="https://img.icons8.com/external-tal-revivo-filled-tal-revivo/48/000000/external-hackerrank-is-a-technology-company-that-focuses-on-competitive-programming-logo-filled-tal-revivo.png" alt="HackerRank" class="w-8">
-      </a>
-      <a href="https://x.com/CodingD47206" target="_blank">
-        <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter" class="w-8">
-      </a>
-    </div>
-    <a href="https://drive.google.com/file/d/1UMOQECaQs_5Qd1rwfkYoXpa18ZZdYCU4/view?usp=sharing">
-      <button class="mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Download Resume</button>
-    </a>
-     
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="p-10 bg-gray-700 fade-in">
-    <h2 class="text-2xl font-bold mb-4">About Me</h2>
-    <p class="mb-4">I'm all about leveraging <strong>tech</strong> to solve real-world problems and make life a bit smarter. Pursuing a degree in <strong>Artificial Intelligence and Data Science</strong>, I’m into programming, data analysis, and building impactful projects that resonate.</p>
-    <p class="mb-4">Currently vibing with <strong>Machine Learning, AI </strong> and diving deep into <strong>Data Science</strong>.</p>
-    <p>Hit me up at <a href="mailto:nikhilsutar621@gmail.com" class="text-blue-400 font-bold hover:text-blue-600 flex items-center"> <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGZpbGw9IiM0Y2FmNTAiIGQ9Ik00NSwxNi4ybC01LDIuNzVsLTUsNC43NUwzNSw0MGg3YzEuNjU3LDAsMy0xLjM0MywzLTNWMTYuMnoiLz48cGF0aCBmaWxsPSIjMWU4OGU1IiBkPSJNMywxNi4ybDMuNjE0LDEuNzFMMTMsMjMuN1Y0MEg2Yy0xLjY1NywwLTMtMS4zNDMtMy0zVjE2LjJ6Ii8+PHBvbHlnb24gZmlsbD0iI2U1MzkzNSIgcG9pbnRzPSIzNSwxMS4yIDI0LDE5LjQ1IDEzLDExLjIgMTIsMTcgMTMsMjMuNyAyNCwzMS45NSAzNSwyMy43IDM2LDE3Ii8+PHBhdGggZmlsbD0iI2M2MjgyOCIgZD0iTTMsMTIuMjk4VjE2LjJsMTAsNy41VjExLjJMOS44NzYsOC44NTlDOS4xMzIsOC4zMDEsOC4yMjgsOCw3LjI5OCw4aDBDNC45MjQsOCwzLDkuOTI0LDMsMTIuMjk4eiIvPjxwYXRoIGZpbGw9IiNmYmMwMmQiIGQ9Ik00NSwxMi4yOThWMTYuMmwtMTAsNy41VjExLjJsMy4xMjQtMi4zNDFDMzguODY4LDguMzAxLDM5Ljc3Miw4LDQwLjcwMiw4aDAgQzQzLjA3Niw4LDQ1LDkuOTI0LDQ1LDEyLjI5OHoiLz48L3N2Zz4=" class="animate-bounce w-6 h-6 mr-2"> nikhilsutar621@gmail.com</a> or just say hi—I’m always up for a chat!</p>
-</section>
-  <!-- Certificates Section -->
-
-</body>
-<!-- Badges Section -->
-<section id="skills" class="p-6 sm:p-10 bg-gray-500 fade-in overflow-hidden">
-  <h2 class="text-3xl font-bold mb-8 text-center">
-    Badges
-  </h2>
-
-  <!-- Scroll Container -->
-  <div id="carousel" class="flex gap-6 items-center w-full overflow-x-auto scroll-smooth whitespace-nowrap no-scrollbar">
-    <!-- Images -->
-    <a href="https://www.credly.com/badges/5589d019-7934-41bd-8edc-abe775780f16/public_url"><img src="https://i.postimg.cc/V6zXKZNb/aws-educate-getting-started-with-databases.png" alt="AWS Educate" class="badge-img" /></a>
-    <a href="https://www.credly.com/badges/ad5f1587-34a4-4296-9acb-8a9afdfe1eed/public_url"><img src="https://i.postimg.cc/v8WtjWcd/aws-educate-machine-learning-foundations.png" alt="AWS Educate" class="badge-img" /></a>
-  </div>
-</section>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nikhil Sutar | Backend Developer, Python and AI</title>
+<meta name="description" content="Nikhil Sutar is a Mumbai-based backend developer building Django APIs, data workflows and AI features. Currently at Publicis Groupe.">
+<meta property="og:title" content="Nikhil Sutar | Backend Developer">
+<meta property="og:description" content="Backend systems and AI features that ship. Python, Django, REST APIs, ML and LLMs.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233548ff'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3ENS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  .badge-img {
-    width: 10rem; /* w-40 */
-    @media (min-width: 640px) {
-      width: 13rem; /* sm:w-52 */
-    }
-    @media (min-width: 768px) {
-      width: 16rem; /* md:w-64 */
-    }
-    object-fit: contain;
-    display: inline-block;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+:root{
+  --bg:#f2f4f8;--surface:#fff;--ink:#101828;--muted:#566074;--line:#d9deea;
+  --accent:#3548ff;--accent-ink:#fff;--ok:#12a150;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1220;--surface:#141c2e;--ink:#e8ecf5;--muted:#9aa6bd;--line:#26314a;--accent:#8794ff;--accent-ink:#0c1220;--ok:#43d17f}}
+:root[data-theme="dark"]{--bg:#0c1220;--surface:#141c2e;--ink:#e8ecf5;--muted:#9aa6bd;--line:#26314a;--accent:#8794ff;--accent-ink:#0c1220;--ok:#43d17f}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);padding-bottom:env(safe-area-inset-bottom,0px);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:2rem}
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.muted{color:var(--muted)}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:60px}
+.logo{font:800 1.15rem var(--head);text-decoration:none}
+nav{display:flex;gap:.25rem;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav a{font-size:.95rem;font-weight:500;text-decoration:none;padding:.4rem .7rem;border-radius:8px;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--ink);background:var(--surface)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;flex:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding-top:clamp(3rem,8vw,6rem)}
+.hero h1{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:800}
+.hero p{max-width:34em;margin:1.4rem 0 2rem;color:var(--muted);font-size:1.15rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);transition:transform .15s}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);font:400 .88rem/1.75 var(--mono);overflow:hidden;box-shadow:0 18px 40px -22px color-mix(in srgb,var(--accent) 55%,transparent)}
+.panel .bar{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-size:.8rem}
+.panel .bar b{color:var(--ok);font-weight:500}
+.panel pre{padding:1rem 1.1rem;font:inherit;white-space:pre-wrap;overflow-wrap:anywhere}
+.k{color:var(--accent)}
+.panel .l{opacity:0;animation:in .4s forwards}
+@keyframes in{to{opacity:1}}
+
+/* experience */
+.tl{list-style:none;padding:0;border-left:2px solid var(--line);margin-left:.4rem}
+.tl li{position:relative;padding:0 0 2.2rem 1.6rem}
+.tl li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl li.now::before{background:var(--ok);border-color:var(--ok)}
+.tl h3{font-size:1.25rem;font-weight:700}
+.tl .when{font-size:.9rem;color:var(--muted);margin:.2rem 0 .6rem}
+.tl p{max-width:62ch}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;grid-column:span 2}
+.card.big{grid-column:span 6;padding:2rem}
+.card h3{font-size:1.35rem;font-weight:700}
+.card.big h3{font-size:1.8rem}
+.card ul{padding-left:1.1rem;color:var(--muted)}
+.card li{margin:.25rem 0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}
+.tags span{font:500 .78rem var(--mono);border:1px solid var(--line);border-radius:6px;padding:.15rem .5rem;color:var(--muted)}
+.links{display:flex;gap:1.2rem;font-weight:600}
+.links a{color:var(--accent)}
+.more{margin-top:1.5rem;color:var(--muted)}
+.win{align-self:flex-start;font:600 .85rem var(--body);background:var(--accent);color:var(--accent-ink);padding:.25rem .7rem;border-radius:999px}
+.card.big.award{border:2px solid var(--accent)}
+
+.shot{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line);background:var(--line)}
+.me{display:block;width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin-bottom:1.2rem}
+.certs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem;margin-top:2rem}
+.cert{display:flex;flex-direction:column;gap:.35rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:.8rem;text-decoration:none}
+.cert:hover{border-color:var(--accent)}
+.cert img,.cert .ph{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--line)}
+.cert img.badge{object-fit:contain;background:#fff;padding:.5rem}
+.cert .ph{display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font:800 1.6rem var(--head);border:0}
+.cert b{font:700 1rem/1.3 var(--head);margin-top:.3rem}
+.cert small{color:var(--muted)}
+/* skills */
+dl{display:grid;grid-template-columns:11rem 1fr;gap:1rem 2rem;border-top:1px solid var(--line);padding-top:1.4rem}
+dt{font:700 1rem var(--head)}
+dd{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.two h3{font-size:1.2rem;margin-bottom:1rem}
+.two ul{list-style:none;padding:0;display:grid;gap:1rem}
+.two li small{display:block;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:3.5rem 0 2.5rem}
+footer h2{font-size:clamp(2rem,6vw,3.4rem);margin-bottom:1.2rem}
+footer .mail{font:700 clamp(1.1rem,3.6vw,1.8rem) var(--head);color:var(--accent);overflow-wrap:anywhere}
+.social{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1.6rem 0 2.4rem;font-weight:600}
+small.copy{color:var(--muted)}
+
+@media(max-width:820px){
+  .hero,.two{grid-template-columns:1fr;gap:2rem}
+  .card{grid-column:span 6}
+  dl{grid-template-columns:1fr;gap:.2rem}
+  dd{margin-bottom:.9rem}
+  .logo{display:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.panel .l{opacity:1;animation:none}.btn{transition:none}}
 </style>
-<!---
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.getElementById("carousel");
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Nikhil Sutar</a>
+    <nav aria-label="Sections">
+      <a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#learning">Education</a><a href="#contact">Contact</a>
+    </nav>
+    <button id="theme" aria-label="Switch light or dark theme" title="Switch theme">◐</button>
+  </div>
+</header>
 
-    if (!carousel) return;
-
-    let scrollAmount = 2;
-    let scrollInterval;
-
-    function startScroll() {
-      scrollInterval = setInterval(() => {
-        carousel.scrollLeft += scrollAmount;
-
-        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
-          carousel.scrollLeft = 0; // Loop back
-        }
-      }, 20);
-    }
-
-    function stopScroll() {
-      clearInterval(scrollInterval);
-    }
-
-    // Optional: Clone first few items to make seamless looping
-    const cloneCount = 3;
-    for (let i = 0; i < cloneCount; i++) {
-      const clone = carousel.children[i].cloneNode(true);
-      carousel.appendChild(clone);
-    }
-
-    carousel.addEventListener("mouseenter", stopScroll);
-    carousel.addEventListener("mouseleave", startScroll);
-
-    startScroll();
-  });
-</script>
--->
-<!-- Skills Section -->
-<section id="skills" class="p-10 bg-gray-800 fade-in">
-  <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-green-800">
-      <h3 class="text-2xl font-semibold text-center text-white mb-8 bg-grey-600">Project Based Experience in Languages
-      </h3>
-      <div class="relative w-64 h-64">
-        <canvas id="languagesChart"></canvas>
-      </div>
-    </div>    
-
-    <!-- Languages -->
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-blue-800">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/programming.png" alt="Languages" class="w-16 mb-3">
-      <h3 class="text-xl font-semibold text-white mb-2">Languages</h3>
-      <div class="text-center text-white">
-        <span class="block">C</span>
-        <span class="block">Java</span>
-        <span class="block">Python</span>
-        <span class="block">JavaScript</span>
-        <span class="block">SQL</span>
-      </div>
+<main id="top">
+<section class="wrap hero" style="padding-bottom:3rem">
+  <div>
+    <img class="me" src="https://i.postimg.cc/J7g7ZvcW/IMG-20260908-091428.png" alt="Nikhil Sutar" width="84" height="84">
+    <h1>I build backend systems and AI features that ship.</h1>
+    <p>I'm Nikhil, a backend developer in Mumbai. I work with Python, Django and REST APIs, and add machine learning or LLMs when they make a product better. Right now I'm interning at Publicis Groupe on Nestlé and Adobe projects.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://drive.google.com/file/d/1UMOQECaQs_5Qd1rwfkYoXpa18ZZdYCU4/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
     </div>
-
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-lime-600 ">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/programming.png" alt="CS Fundamentals" class="w-16 mb-3">
-      <h3 class="text-xl font-semibold text-white mb-2">CS Fundamentals</h3>
-      <div class="text-center text-white">
-        <span class="block">DLCA - Digital Logic Computer Architecture</span>
-        <span class="block">MP - Microprocessor</span>
-        <span class="block">DSGT - Data Structures and Graph Theory</span>
-        <span class="block">OS - Operating Systems</span>
-        <span class="block">DBMS - Database Management Systems</span>
-        <span class="block">AOA - Analysis of Algorithms</span>
-        <span class="block">CN - Computer Networks</span>
-      </div>
-    </div>
-    
-    <!-- Frameworks -->
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-yellow-800">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAlUlEQVR4nO3WORbDIBBEQe5/6XYsJWM02rCrUj2xfAgYAwAAAPh7mdT9/27lAac5YF5OgEqaRfNrAcbk9+VFgK3ZQMuLAHOqgHc7/QZUBNjJw0ZXmhNes63j6wEA+FqaD4+8nACVNIvm5QSopCg2XXQ1EWBrNtDyIsCcKuDdTr8BFQF28rDRleaE12zr+HoAAAAAxs4HwQrztRGOdiYAAAAASUVORK5CYII=" alt="overview-pages-4" alt="Curly Braces Logo" class="w-16 mb-2">
-      <h3 class="text-xl font-semibold text-white mb-2">Frameworks</h3>
-      <div class="text-center text-white">
-        <span class="block">Flask</span>
-        <span class="block">Django</span>
-        <span class="block">Bootstrap</span>
-        <span class="block">Tailwind CSS</span>
-        <span class="block">React.js <strong></strong></span>
-      </div>
-    </div>
-
-   <!-- Data Science Libraries -->
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-green-800">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/database.png" alt="Data Science Libraries" class="w-16 mb-3">
-      <h3 class="text-xl font-semibold text-white mb-2">Data Science Stuff</h3>
-      <div class="text-center text-white mb-4">
-        <table class="w-full text-left table-auto">
-          <thead>
-            <tr>
-              <th class="px-4 py-2 bg-gray-600 text-white">Libraries</th>
-              <th class="px-4 py-2 bg-gray-600 text-white">Tools</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="bg-gray-800">
-              <td class="px-4 py-2">Numpy</td>
-              <td class="px-4 py-2">Jupyter Notebook</td>
-            </tr>
-            <tr class="bg-gray-700">
-              <td class="px-4 py-2">Pandas</td>
-              <td class="px-4 py-2">Power BI</td>
-            </tr>
-            <tr class="bg-gray-800">
-              <td class="px-4 py-2">Matplotlib</td>
-              <td class="px-4 py-2">Excel</td>
-            </tr>
-            <tr class="bg-gray-700">
-              <td class="px-4 py-2">scikit-learn</td>
-              <td class="px-4 py-2">Google Colab</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Tools -->
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-indigo-800">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/git.png" alt="Tools" class="w-16 mb-3">
-      <h3 class="text-xl font-semibold text-white mb-2">Tools</h3>
-      <div class="text-center text-white">
-        <span class="block">Git Desktop</span>
-        <span class="block">Github</span>
-        <span class="block">CodeSandbox.io</span>
-      </div>
-    </div>
-
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-pink-900">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/database.png" alt="Databases" class="w-16 mb-3">
-      <h3 class="text-xl font-semibold text-white mb-2">Databases</h3>
-      <div class="text-center text-white">
-        <span class="block">MongoDB</span>
-        <span class="block">SQLite3</span>
-        <span class="block">MySQL</span>
-        <span class="block">PostgreSQL</span>
-        <span class="block">Oracle</span>
-      </div>
-    </div>
-
-    <!-- API, Hosting, etc -->
-    <div class="flex flex-col items-center p-5 bg-gray-700 rounded-lg shadow-lg hover:bg-red-800">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/api.png" alt="API, Hosting, etc." class="w-16 mb-3">
-      <h3 class="text-xl font-semibold text-white mb-2">API, Hosting, etc.</h3>
-      <div class="text-center text-white">
-        <span class="block">Rapid-API</span>
-        <span class="block">Vercel</span>
-        <span class="block">Open Source API</span>
-      </div>
-    </div>
+  </div>
+  <div class="panel" aria-label="Profile summary">
+    <div class="bar"><span>GET /nikhil</span><b>200 OK</b></div>
+<pre><span class="l" style="animation-delay:.2s">{</span>
+<span class="l" style="animation-delay:.45s">  <span class="k">"name"</span>: "Nikhil M. Sutar",</span>
+<span class="l" style="animation-delay:.7s">  <span class="k">"role"</span>: "Backend developer",</span>
+<span class="l" style="animation-delay:.95s">  <span class="k">"stack"</span>: ["Python", "Django", "FastAPI", "PostgreSQL"],</span>
+<span class="l" style="animation-delay:1.2s">  <span class="k">"won"</span>: "1st place, UAi HAWK-ATHON 2026",</span>
+<span class="l" style="animation-delay:1.45s">  <span class="k">"now"</span>: "Publicis Groupe, Mumbai",</span>
+<span class="l" style="animation-delay:1.7s">  <span class="k">"degree"</span>: "B.E. AI &amp; Data Science, 2026",</span>
+<span class="l" style="animation-delay:1.95s">  <span class="k">"open_to"</span>: "Backend and AI roles"</span>
+<span class="l" style="animation-delay:2.2s">}</span></pre>
   </div>
 </section>
 
-<!-- Certificates Section -->
-<section id="certificates" class="p-10 bg-gray-800 fade-in">
-  <h2 class="text-3xl font-bold text-white mb-6 text-center">Certificates</h2>
-      <!-- Hackathon Certificate -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out border-2 border-yellow-500">
-      <img src="https://i.postimg.cc/Nj3xFRpN/Whats-App-Image-2025-04-13-at-1-43-09-PM.jpg" alt="Hackathon Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-yellow-400 mb-2">Hackathon Participation</h5>
-        <p class="text-gray-400 mb-4">Built an innovative project from scratch in just 24 hours during the Code Automata 1.1 hackathon hosted by CSMU.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_hackathonexperience-pythondeveloper-machinelearning-activity-7317106404069146624-ptBu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwaZbABiSYaPWifK9jMSKuzQexp2dZki44">
-          <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out border-2 border-yellow-500">
-      <img src="https://i.postimg.cc/dtcNTxMX/AI-hackethon-certificate-1.png" alt="Hackathon Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-yellow-400 mb-2">Hackathon Participation</h5>
-        <p class="text-gray-400 mb-4">Successfully built an innovative project within a competitive hackathon organized by UAI University.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_artificialintelligence-sentimentanalysis-activity-7307679708589056000-NYca?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEwaZbABiSYaPWifK9jMSKuzQexp2dZki44">
-          <button class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <!-- Java Certificate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" alt="Java Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">Java</h5>
-        <p class="text-gray-400 mb-4">OOPs, Swing, Core Java, and Collection Framework</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- Python & Django Certificate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="Python & Django Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">Python & Django</h5>
-        <p class="text-gray-400 mb-4">Versatile Python and Django basics - OOP, scripting, views, and templates.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/SRYvvQB7/Web-devleopement.jpg" alt="Python & Django Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">The Complete 2024 Web Development Bootcamp</h5>
-        <p class="text-gray-400 mb-4">HTML, CSS, and JavaScript to React, Node.js, and Express.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-learningneverstops-udemy-activity-7287108081287598080-KwaW?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-
-    <!-- JavaScript Certificate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" alt="JavaScript Certificate" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold text-white mb-2">JavaScript</h5>
-        <p class="text-gray-400 mb-4">JS essentials: variables, functions, DOM, events, async, ES6, and more.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Out on LinkedIn
-          </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- Projects Section -->
-<!-- Projects Section -->
-<section id="projects" class="py-10 bg-gray-700 text-white">
-  <h2 class="text-3xl font-bold text-center mb-8">💡 Projects</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-8">
-    <!-- Project 1: Success Classes Of Engineering -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/508hbcGN/pranav-interiors-and-decorators-onrender-ss.jpg" alt="Pranav Interiors" class="w-full h-50 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold mb-2">🏠 Pranav Interiors</h5>
-        <p class="text-gray-400 mb-3">A dynamic Django-based website for interior design services, deployed on Render.</p>
-        <a href="https://pranav-interiors-and-decorators.onrender.com/">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Live Link
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- Project 1: Success Classes Of Engineering -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png" alt="SutarFlix" class="w-full h-48 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold mb-2">🚀 Success Classes Of Engineering</h5>
-        <p class="text-gray-400 mb-3">Building a Flask-based website for Engineering Classes.</p>
-        <a href="https://successclassesofengineering.com/">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Live Link
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- Project 2: Tourmate -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.ibb.co/F85KqGy/dashboard.png" alt="Tourmate" class="w-full h-48 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold mb-2">🌍 Tourmate</h5>
-        <p class="text-gray-400 mb-3">Java Swing-based Desktop application.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_tourmate-travelapp-javadevelopment-activity-7183136207487270922-nO6G?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">
-            Check Here
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- Project 3: Sutar.ka.Weather.App -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/Qd9HLP6g/1712140961216.png" alt="Sutar.ka.Weather.App" class="w-full h-48 object-cover">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold mb-2">🌦️ Sutar.ka.Weather.App</h5>
-        <p class="text-gray-400 mb-3">Weather fetching Web Application using API.</p>
-        <a href="https://carpentrycoder.github.io/Sutar.ka.Weather.app/">
-          <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300">
-            Live Link
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- Project 1: Sutarflix -->
-    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-      <img src="https://i.postimg.cc/kgpjnGVK/1712671865805.jpg" alt="Sutarflix" class="w-full h-48 object-cover object-top">
-      <div class="p-5">
-        <h5 class="text-xl font-semibold mb-2">🎬 Sutarflix</h5>
-        <p class="text-gray-400 mb-3">Flask-based Website for Streaming Services.</p>
-        <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flaskdevelopment-webdevelopment-moviestreaming-activity-7180954773746044928-raXZ?utm_source=share&utm_medium=member_desktop">
-          <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition duration-300">
-            Check Here
-          </button>
-        </a>
-      </div>
-    </div>
-<!-- Project 2: Sutar_ki_dukaan -->
-<div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-  <img src="https://i.postimg.cc/T1bxcFZH/Screenshot-2025-01-20-144943.png" alt="Sutar_ki_dukaan" class="w-full h-48 object-cover object-top">
-  <div class="p-5">
-    <h5 class="text-xl font-semibold mb-2">🛒 Sutar_ki_dukaan</h5>
-    <p class="text-gray-400 mb-3">E-commerce platform with MERN stack.</p>
-    <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-activity-7188483974233473024-9AaZ?utm_source=share&utm_medium=member_desktop">
-      <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">
-        Check Here
-      </button>
-    </a>
-  </div>
-</div>
-<!-- Project 3: E-commerce Sales Prediction -->
-<div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 ease-in-out">
-  <img src="https://i.postimg.cc/CLNtZ9Fm/sales-gyaan.png" alt="E-commerce Sales Prediction" class="w-full h-48 object-cover object-top">
-  <div class="p-5">
-    <h5 class="text-xl font-semibold mb-2">📊 SaleGyan</h5>
-    <p class="text-gray-400 mb-3">Sales & Insights Prediction Using ML-Based Website.</p>
-    <a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_datavisualization-predictiveanalytics-ai-activity-7265932014648786944-ML94?utm_source=share&utm_medium=member_desktop">
-      <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition duration-300">
-        Check Here 
-      </button>
-    </a>
-  </div>
-</div> 
-  </div>
+<section id="work" class="wrap">
+  <h2>Where I've worked</h2>
+  <ol class="tl">
+    <li class="now">
+      <h3>Backend Developer Intern, Publicis Groupe</h3>
+      <div class="when">May 2026 to present, Mumbai, on site</div>
+      <p>Building backend and marketing technology on projects for Nestlé and Adobe. I build and tune APIs and data workflows in Python, Django, REST and SQL, and I worked on Adobe creative automation that adapts PSD and AI files into many sizes automatically.</p>
+    </li>
+    <li>
+      <h3>Backend Developer Intern, Altissadvance Tech (XIRCLS)</h3>
+      <div class="when">Jun to Sep 2025, on site</div>
+      <p>Built and optimized scalable services with Python, Django and MySQL. I worked on architecture, algorithms and deployment, which cut bugs and sped up delivery.</p>
+    </li>
+    <li>
+      <h3>Python Developer, Freelance, Success Classes of Engineering</h3>
+      <div class="when">2025, hybrid</div>
+      <p>Built a responsive, mobile-friendly website that connects students with engineering courses. It is live and used by real students.</p>
+    </li>
+  </ol>
 </section>
 
-<!-- Footer -->
-<footer id="contact" class="p-5 bg-gray-900 text-center fade-in">
-  <p>&copy; 2025 Nikhil Sutar. All Rights Reserved.</p>
+<section id="projects" class="wrap">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card big award">
+      <span class="win">1st place, International UAi HAWK-ATHON 2026</span>
+      <h3>Rural telehealth platform for low-bandwidth networks</h3>
+      <p class="muted">Built in 24 hours with my team CipherX at Universal Ai University. Many people in rural India struggle to reach a doctor, so we built one system that connects patients, doctors and pharmacies, and works on weak internet. The judges praised its practical approach, AI integration and real-world usability.</p>
+      <ul>
+        <li>Remote doctor consultations</li>
+        <li>AI symptom guidance for patients</li>
+        <li>Digital health records</li>
+        <li>Search for medicines available at nearby pharmacies</li>
+        <li>Optimized for low-bandwidth rural networks</li>
+      </ul>
+      <p class="muted">Team CipherX: Nikhil Sutar, Omkar Patkar, Mangesh Bhalerao and Karan Surve, representing Konkan Gyanpeeth College of Engineering. I worked on the Python backend.</p>
+      <div class="tags"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL (NeonDB)</span><span>Groq API</span><span>OpenRouter</span></div>
+      <div class="links"><a href="https://lnkd.in/dRUvwgFV" target="_blank" rel="noopener">Live project</a><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_ai-hawkathon-hackathon-ugcPost-7438900681069182976-dX4e/" target="_blank" rel="noopener">LinkedIn post</a></div>
+    </article>
+
+    <article class="card big">
+      <h3>SWASTH-AI: AI healthcare and diet system</h3>
+      <p class="muted">My final-year project (Jun to Dec 2025). It plans a diet around a person's health, tastes and allergies, then explains its advice in plain language.</p>
+      <ul>
+        <li>Personal diet plans from ML regression and neural networks (MLP)</li>
+        <li>Allergy and preference filtering with rules and similarity models</li>
+        <li>Meal timing with LSTM sequence models</li>
+        <li>Nutritional deficiency prediction through multi-label classification</li>
+        <li>LLM chat that explains each recommendation</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>TensorFlow / LSTM</span><span>scikit-learn</span><span>LLM</span></div>
+      <!-- TODO: replace the href below with your SWASTH-AI live link -->
+      <div class="links"><a href="https://github.com/carpentrycoder/" target="_blank" rel="noopener">View live project</a></div>
+    </article>
+
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.postimg.cc/CLNtZ9Fm/sales-gyaan.png" alt="SaleGyaan dashboard screenshot">
+      <h3>SaleGyaan: sales prediction web app</h3>
+      <p class="muted">Upload a sales CSV and get validated data, trend charts and ML forecasts for an online store.</p>
+      <ul><li>CSV upload with validation</li><li>ML-based sales prediction</li><li>LLM-assisted analysis and insights</li></ul>
+      <div class="tags"><span>Python</span><span>ML</span><span>LLM</span></div>
+      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_datavisualization-predictiveanalytics-ai-activity-7265932014648786944-ML94" target="_blank" rel="noopener">LinkedIn post</a></div>
+    </article>
+
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png" alt="Success Classes of Engineering website screenshot">
+      <h3>Success Classes of Engineering</h3>
+      <p class="muted">A Flask website for an engineering coaching business, built as a freelance client project.</p>
+      <ul><li>Responsive on phones and laptops</li><li>Helps students find and join courses</li></ul>
+      <div class="tags"><span>Flask</span><span>Python</span><span>Responsive UI</span></div>
+      <div class="links"><a href="https://successclassesofengineering.com/" target="_blank" rel="noopener">Live site</a></div>
+    </article>
+
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.postimg.cc/508hbcGN/pranav-interiors-and-decorators-onrender-ss.jpg" alt="Pranav Interiors website screenshot">
+      <h3>Pranav Interiors</h3>
+      <p class="muted">A Django website for an interior design business, deployed on Render.</p>
+      <ul><li>Service showcase for clients</li><li>Server-rendered Django templates</li></ul>
+      <div class="tags"><span>Django</span><span>Render</span></div>
+      <div class="links"><a href="https://pranav-interiors-and-decorators.onrender.com/" target="_blank" rel="noopener">Live site</a></div>
+    </article>
+
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.postimg.cc/Qd9HLP6g/1712140961216.png" alt="Weather app screenshot">
+      <h3>Weather app</h3>
+      <p class="muted">A small web app that fetches live weather from an open API.</p>
+      <div class="tags"><span>JavaScript</span><span>REST API</span></div>
+      <div class="links"><a href="https://carpentrycoder.github.io/Sutar.ka.Weather.app/" target="_blank" rel="noopener">Live site</a></div>
+    </article>
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.postimg.cc/T1bxcFZH/Screenshot-2025-01-20-144943.png" alt="Sutar_ki_dukaan store screenshot">
+      <h3>Sutar_ki_dukaan</h3>
+      <p class="muted">An e-commerce platform built with the MERN stack.</p>
+      <div class="tags"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
+      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-activity-7188483974233473024-9AaZ" target="_blank" rel="noopener">LinkedIn post</a></div>
+    </article>
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.postimg.cc/kgpjnGVK/1712671865805.jpg" alt="Sutarflix screenshot">
+      <h3>Sutarflix</h3>
+      <p class="muted">A Flask website for streaming movies.</p>
+      <div class="tags"><span>Flask</span><span>Python</span></div>
+      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flaskdevelopment-webdevelopment-moviestreaming-activity-7180954773746044928-raXZ" target="_blank" rel="noopener">LinkedIn post</a></div>
+    </article>
+    <article class="card">
+      <img class="shot" loading="lazy" src="https://i.ibb.co/F85KqGy/dashboard.png" alt="Tourmate dashboard screenshot">
+      <h3>Tourmate</h3>
+      <p class="muted">A travel planning desktop application.</p>
+      <div class="tags"><span>Java</span><span>Swing</span></div>
+      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_tourmate-travelapp-javadevelopment-activity-7183136207487270922-nO6G" target="_blank" rel="noopener">LinkedIn post</a></div>
+    </article>
+  </div>
+  <p class="more">More code is on <a href="https://github.com/carpentrycoder/" target="_blank" rel="noopener">GitHub</a>.</p>
+</section>
+
+<section id="skills" class="wrap">
+  <h2>Skills</h2>
+  <dl>
+    <dt>Languages</dt><dd>Python, Java, JavaScript, SQL, C</dd>
+    <dt>Backend</dt><dd>Django, Django REST, Flask, FastAPI, Node.js, Webhooks, Shopify, Prometheus, Grafana</dd>
+    <dt>Frontend</dt><dd>React, Next.js, Tailwind, Bootstrap, Mantine UI</dd>
+    <dt>Databases</dt><dd>PostgreSQL, MySQL, MongoDB, SQLite, Microsoft SQL Server</dd>
+    <dt>AI and data</dt><dd>Machine learning, deep learning, LLMs, Hugging Face, NumPy, Pandas, scikit-learn, Power BI</dd>
+    <dt>Tools</dt><dd>Git, GitHub, Docker, VS Code, PyCharm, IntelliJ, Jupyter, Google Colab</dd>
+  </dl>
+</section>
+
+<section id="learning" class="wrap">
+  <h2>Education and certificates</h2>
+  <p><strong>B.E. in Artificial Intelligence and Data Science</strong><br><span class="muted">Konkan Gyanpeeth College of Engineering, University of Mumbai, 2023 to 2026. CGPI 7.28</span></p>
+  <div class="certs">
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_ai-hawkathon-hackathon-ugcPost-7438900681069182976-dX4e/" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/yYwknFvT/hackthon-certificate-2.jpg"><b>Winner, International UAi HAWK-ATHON 2026</b><small>1st place with team CipherX, 24 hours</small></a>
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_hackathonexperience-pythondeveloper-machinelearning-activity-7317106404069146624-ptBu" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/Nj3xFRpN/Whats-App-Image-2025-04-13-at-1-43-09-PM.jpg" alt="Code Automata 1.1 hackathon"><b>Code Automata 1.1 hackathon</b><small>Built a project in 24 hours, hosted by CSMU</small></a>
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_artificialintelligence-sentimentanalysis-activity-7307679708589056000-NYca" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/dtcNTxMX/AI-hackethon-certificate-1.png" alt="UAI University hackathon"><b>UAI University hackathon</b><small>Built a project in a competitive hackathon</small></a>
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" alt="Java"><b>Java</b><small>OOP, Swing, Core Java, Collections</small></a>
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="Python and Django"><b>Python and Django</b><small>OOP, scripting, views, templates</small></a>
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-learningneverstops-udemy-activity-7287108081287598080-KwaW" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/SRYvvQB7/Web-devleopement.jpg" alt="Complete 2024 Web Development Bootcamp"><b>Complete 2024 Web Development Bootcamp</b><small>HTML, CSS, JavaScript, React, Node.js, Express</small></a>
+      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" alt="JavaScript"><b>JavaScript</b><small>Functions, DOM, events, async, ES6</small></a>
+      <a class="cert" href="https://www.credly.com/badges/5589d019-7934-41bd-8edc-abe775780f16/public_url" target="_blank" rel="noopener"><img class="badge" loading="lazy" src="https://i.postimg.cc/V6zXKZNb/aws-educate-getting-started-with-databases.png" alt="AWS Educate: Getting Started with Databases"><b>AWS Educate: Getting Started with Databases</b><small>Credly badge</small></a>
+      <a class="cert" href="https://www.credly.com/badges/ad5f1587-34a4-4296-9acb-8a9afdfe1eed/public_url" target="_blank" rel="noopener"><img class="badge" loading="lazy" src="https://i.postimg.cc/v8WtjWcd/aws-educate-machine-learning-foundations.png" alt="AWS Educate: Machine Learning Foundations"><b>AWS Educate: Machine Learning Foundations</b><small>Credly badge</small></a>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's build something.</h2>
+    <a class="mail" href="mailto:nikhilsutar621@gmail.com">nikhilsutar621@gmail.com</a>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/carpentrycoder/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.hackerrank.com/profile/nikhilsutar621" target="_blank" rel="noopener">HackerRank</a>
+      <a href="https://x.com/CodingD47206" target="_blank" rel="noopener">X</a>
+    </div>
+    <small class="copy">© <span id="yr">2026</span> Nikhil M. Sutar. Mumbai, India.</small>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx = document.getElementById('languagesChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Java', 'Python', 'HTML', 'JavaScript', 'CSS', 'C','SQL'],
-      datasets: [{
-        label: 'Languages',
-        data: [52.8, 55.36, 13.1, 7.6, 4.44, 1.7,30],
-        backgroundColor: [
-          '#FF6384', // Java
-          '#36A2EB', // Python
-          '#FFCE56', // HTML
-          '#4BC0C0', // JavaScript
-          '#9966FF', // CSS
-          '#FF9F40', // C
-          '#4de028', // Sql
-        ],
-        borderWidth: 1,
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            color: '#ffffff', // White text for legend
-          }
-        }
-      }
-    }
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+    var next=dark?'light':'dark';root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
   });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
 </script>
+</body>
 </html>
