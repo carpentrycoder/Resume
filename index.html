@@ -117,211 +117,658 @@ small.copy{color:var(--muted)}
   .logo{display:none}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.panel .l{opacity:1;animation:none}.btn{transition:none}}
+#adm{position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#adm[hidden]{display:none}
+#adm .bar2{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:.7rem 0}
+#adm .row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+#adm .at{font:800 1.2rem var(--head)}
+#adm label{display:block;font-size:.85rem;font-weight:600;margin:.8rem 0 .25rem}
+#adm input[type=text],#adm input[type=password],#adm textarea{width:100%;font:inherit;font-size:.95rem;padding:.55rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+#adm textarea{resize:vertical}
+#adm details{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:.2rem .9rem;margin:.6rem 0}
+#adm summary{cursor:pointer;font-weight:600;padding:.6rem 0}
+#adm .btn{padding:.5rem .9rem;font:inherit;font-weight:600;font-size:.9rem;background:transparent;color:var(--ink);cursor:pointer}
+#adm .btn.primary{background:var(--accent);color:var(--accent-ink)}
+#adm .btn[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+#adg{position:fixed;inset:0;z-index:60;background:var(--bg);display:grid;place-items:center;padding:1.2rem}
+#adg[hidden]{display:none}
+#adg .gbox{width:min(380px,100%);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+#adg label{display:block;font-size:.85rem;font-weight:600;margin:.8rem 0 .25rem}
+#adg input{width:100%;font:inherit;font-size:.95rem;padding:.55rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+#adg .row{display:flex;gap:.6rem}
+#adg .btn{padding:.5rem .9rem;font:inherit;font-weight:600;font-size:.9rem;background:transparent;color:var(--ink);cursor:pointer}
+#adg .btn.primary{background:var(--accent);color:var(--accent-ink)}
+.lnk{background:none;border:0;color:var(--accent);font:inherit;font-size:.9rem;cursor:pointer;text-decoration:underline;padding:0}
+#adm summary{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;list-style:none}
+#adm summary::-webkit-details-marker{display:none}
+#adm summary::before{content:"▸";transition:transform .15s}
+#adm details[open]>summary::before{transform:rotate(90deg)}
+#adm summary .st{flex:1;min-width:8rem}
+#adm .btn.sq{padding:.3rem .65rem}
+#adm .btn.dl{padding:.3rem .75rem;color:#d92d20;border-color:#d92d20}
+#adm .btn:disabled{opacity:.4;cursor:default}
 </style>
 </head>
 <body>
+<!-- Admin: open this page with #admin at the end of the address. Content lives in the site-data block below. -->
 <header>
   <div class="wrap">
-    <a class="logo" href="#top">Nikhil Sutar</a>
-    <nav aria-label="Sections">
-      <a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#learning">Education</a><a href="#contact">Contact</a>
-    </nav>
+    <a class="logo" href="#top" id="logo"></a>
+    <nav aria-label="Sections"><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#learning">Education</a><a href="#contact">Contact</a></nav>
     <button id="theme" aria-label="Switch light or dark theme" title="Switch theme">◐</button>
   </div>
 </header>
-
 <main id="top">
-<section class="wrap hero" style="padding-bottom:3rem">
-  <div>
-    <img class="me" src="https://i.postimg.cc/J7g7ZvcW/IMG-20260908-091428.png" alt="Nikhil Sutar" width="84" height="84">
-    <h1>I build backend systems and AI features that ship.</h1>
-    <p>I'm Nikhil, a backend developer in Mumbai. I work with Python, Django and REST APIs, and add machine learning or LLMs when they make a product better. Right now I'm interning at Publicis Groupe on Nestlé and Adobe projects.</p>
-    <div class="btns">
-      <a class="btn primary" href="#projects">See my projects</a>
-      <a class="btn" href="https://drive.google.com/file/d/1eUwFi7moJ_Qnt9lywDxv1v4DhQmSMSRX/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
-    </div>
-  </div>
-  <div class="panel" aria-label="Profile summary">
-    <div class="bar"><span>GET /nikhil</span><b>200 OK</b></div>
-<pre><span class="l" style="animation-delay:.2s">{</span>
-<span class="l" style="animation-delay:.45s">  <span class="k">"name"</span>: "Nikhil M. Sutar",</span>
-<span class="l" style="animation-delay:.7s">  <span class="k">"role"</span>: "Backend developer",</span>
-<span class="l" style="animation-delay:.95s">  <span class="k">"stack"</span>: ["Python", "Django", "FastAPI", "PostgreSQL"],</span>
-<span class="l" style="animation-delay:1.2s">  <span class="k">"won"</span>: "1st place, UAi HAWK-ATHON 2026",</span>
-<span class="l" style="animation-delay:1.45s">  <span class="k">"now"</span>: "Publicis Groupe, Mumbai",</span>
-<span class="l" style="animation-delay:1.7s">  <span class="k">"degree"</span>: "B.E. AI &amp; Data Science, 2026",</span>
-<span class="l" style="animation-delay:1.95s">  <span class="k">"open_to"</span>: "Backend and AI roles"</span>
-<span class="l" style="animation-delay:2.2s">}</span></pre>
-  </div>
-</section>
-
-<section id="work" class="wrap">
-  <h2>Where I've worked</h2>
-  <ol class="tl">
-    <li class="now">
-      <h3>Backend Developer Intern, Publicis Groupe</h3>
-      <div class="when">May 2026 to present, Mumbai, on site</div>
-      <p>Building backend and marketing technology on projects for Nestlé and Adobe. I build and tune APIs and data workflows in Python, Django, REST and SQL, and I worked on Adobe creative automation that adapts PSD and AI files into many sizes automatically.</p>
-    </li>
-    <li>
-      <h3>Backend Developer Intern, Altissadvance Tech (XIRCLS)</h3>
-      <div class="when">Jun to Sep 2025, on site</div>
-      <p>Built and optimized scalable services with Python, Django and MySQL. I worked on architecture, algorithms and deployment, which cut bugs and sped up delivery.</p>
-    </li>
-    <li>
-      <h3>Python Developer, Freelance, Success Classes of Engineering</h3>
-      <div class="when">2025, hybrid</div>
-      <p>Built a responsive, mobile-friendly website that connects students with engineering courses. It is live and used by real students.</p>
-    </li>
-  </ol>
-</section>
-
-<section id="projects" class="wrap">
-  <h2>Projects</h2>
-  <div class="grid">
-    <article class="card big award">
-      <span class="win">1st place, International UAi HAWK-ATHON 2026</span>
-      <h3>Rural telehealth platform for low-bandwidth networks</h3>
-      <p class="muted">Built in 24 hours with my team CipherX at Universal Ai University. Many people in rural India struggle to reach a doctor, so we built one system that connects patients, doctors and pharmacies, and works on weak internet. The judges praised its practical approach, AI integration and real-world usability.</p>
-      <ul>
-        <li>Remote doctor consultations</li>
-        <li>AI symptom guidance for patients</li>
-        <li>Digital health records</li>
-        <li>Search for medicines available at nearby pharmacies</li>
-        <li>Optimized for low-bandwidth rural networks</li>
-      </ul>
-      <p class="muted">Team CipherX: Nikhil Sutar, Omkar Patkar, Mangesh Bhalerao and Karan Surve, representing Konkan Gyanpeeth College of Engineering. I worked on the Python backend.</p>
-      <div class="tags"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL (NeonDB)</span><span>Groq API</span><span>OpenRouter</span></div>
-      <div class="links"><a href="https://lnkd.in/dRUvwgFV" target="_blank" rel="noopener">Live project</a><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_ai-hawkathon-hackathon-ugcPost-7438900681069182976-dX4e/" target="_blank" rel="noopener">LinkedIn post</a></div>
-    </article>
-
-    <article class="card big">
-      <h3>SWASTH-AI: AI healthcare and diet system</h3>
-      <p class="muted">My final-year project (Jun to Dec 2025). It plans a diet around a person's health, tastes and allergies, then explains its advice in plain language.</p>
-      <ul>
-        <li>Personal diet plans from ML regression and neural networks (MLP)</li>
-        <li>Allergy and preference filtering with rules and similarity models</li>
-        <li>Meal timing with LSTM sequence models</li>
-        <li>Nutritional deficiency prediction through multi-label classification</li>
-        <li>LLM chat that explains each recommendation</li>
-      </ul>
-      <div class="tags"><span>Python</span><span>TensorFlow / LSTM</span><span>scikit-learn</span><span>LLM</span></div>
-      <!-- TODO: replace the href below with your SWASTH-AI live link -->
-      <div class="links"><a href="https://github.com/carpentrycoder/" target="_blank" rel="noopener">View live project</a></div>
-    </article>
-
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.postimg.cc/CLNtZ9Fm/sales-gyaan.png" alt="SaleGyaan dashboard screenshot">
-      <h3>SaleGyaan: sales prediction web app</h3>
-      <p class="muted">Upload a sales CSV and get validated data, trend charts and ML forecasts for an online store.</p>
-      <ul><li>CSV upload with validation</li><li>ML-based sales prediction</li><li>LLM-assisted analysis and insights</li></ul>
-      <div class="tags"><span>Python</span><span>ML</span><span>LLM</span></div>
-      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_datavisualization-predictiveanalytics-ai-activity-7265932014648786944-ML94" target="_blank" rel="noopener">LinkedIn post</a></div>
-    </article>
-
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png" alt="Success Classes of Engineering website screenshot">
-      <h3>Success Classes of Engineering</h3>
-      <p class="muted">A Flask website for an engineering coaching business, built as a freelance client project.</p>
-      <ul><li>Responsive on phones and laptops</li><li>Helps students find and join courses</li></ul>
-      <div class="tags"><span>Flask</span><span>Python</span><span>Responsive UI</span></div>
-      <div class="links"><a href="https://successclassesofengineering.com/" target="_blank" rel="noopener">Live site</a></div>
-    </article>
-
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.postimg.cc/508hbcGN/pranav-interiors-and-decorators-onrender-ss.jpg" alt="Pranav Interiors website screenshot">
-      <h3>Pranav Interiors</h3>
-      <p class="muted">A Django website for an interior design business, deployed on Render.</p>
-      <ul><li>Service showcase for clients</li><li>Server-rendered Django templates</li></ul>
-      <div class="tags"><span>Django</span><span>Render</span></div>
-      <div class="links"><a href="https://pranav-interiors-and-decorators.onrender.com/" target="_blank" rel="noopener">Live site</a></div>
-    </article>
-
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.postimg.cc/Qd9HLP6g/1712140961216.png" alt="Weather app screenshot">
-      <h3>Weather app</h3>
-      <p class="muted">A small web app that fetches live weather from an open API.</p>
-      <div class="tags"><span>JavaScript</span><span>REST API</span></div>
-      <div class="links"><a href="https://carpentrycoder.github.io/Sutar.ka.Weather.app/" target="_blank" rel="noopener">Live site</a></div>
-    </article>
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.postimg.cc/T1bxcFZH/Screenshot-2025-01-20-144943.png" alt="Sutar_ki_dukaan store screenshot">
-      <h3>Sutar_ki_dukaan</h3>
-      <p class="muted">An e-commerce platform built with the MERN stack.</p>
-      <div class="tags"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
-      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-activity-7188483974233473024-9AaZ" target="_blank" rel="noopener">LinkedIn post</a></div>
-    </article>
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.postimg.cc/kgpjnGVK/1712671865805.jpg" alt="Sutarflix screenshot">
-      <h3>Sutarflix</h3>
-      <p class="muted">A Flask website for streaming movies.</p>
-      <div class="tags"><span>Flask</span><span>Python</span></div>
-      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flaskdevelopment-webdevelopment-moviestreaming-activity-7180954773746044928-raXZ" target="_blank" rel="noopener">LinkedIn post</a></div>
-    </article>
-    <article class="card">
-      <img class="shot" loading="lazy" src="https://i.ibb.co/F85KqGy/dashboard.png" alt="Tourmate dashboard screenshot">
-      <h3>Tourmate</h3>
-      <p class="muted">A travel planning desktop application.</p>
-      <div class="tags"><span>Java</span><span>Swing</span></div>
-      <div class="links"><a href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_tourmate-travelapp-javadevelopment-activity-7183136207487270922-nO6G" target="_blank" rel="noopener">LinkedIn post</a></div>
-    </article>
-  </div>
-  <p class="more">More code is on <a href="https://github.com/carpentrycoder/" target="_blank" rel="noopener">GitHub</a>.</p>
-</section>
-
-<section id="skills" class="wrap">
-  <h2>Skills</h2>
-  <dl>
-    <dt>Languages</dt><dd>Python, Java, JavaScript, SQL, C</dd>
-    <dt>Backend</dt><dd>Django, Django REST, Flask, FastAPI, Node.js, Webhooks, Shopify, Prometheus, Grafana</dd>
-    <dt>Frontend</dt><dd>React, Next.js, Tailwind, Bootstrap, Mantine UI</dd>
-    <dt>Databases</dt><dd>PostgreSQL, MySQL, MongoDB, SQLite, Microsoft SQL Server</dd>
-    <dt>AI and data</dt><dd>Machine learning, deep learning, LLMs, Hugging Face, NumPy, Pandas, scikit-learn, Power BI</dd>
-    <dt>Tools</dt><dd>Git, GitHub, Docker, VS Code, PyCharm, IntelliJ, Jupyter, Google Colab</dd>
-  </dl>
-</section>
-
-<section id="learning" class="wrap">
-  <h2>Education and certificates</h2>
-  <p><strong>B.E. in Artificial Intelligence and Data Science</strong><br><span class="muted">Konkan Gyanpeeth College of Engineering, University of Mumbai, 2023 to 2026. CGPI 7.28</span></p>
-  <div class="certs">
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_ai-hawkathon-hackathon-ugcPost-7438900681069182976-dX4e/" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/yYwknFvT/hackthon-certificate-2.jpg"><b>Winner, International UAi HAWK-ATHON 2026</b><small>1st place with team CipherX, 24 hours</small></a>
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_hackathonexperience-pythondeveloper-machinelearning-activity-7317106404069146624-ptBu" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/Nj3xFRpN/Whats-App-Image-2025-04-13-at-1-43-09-PM.jpg" alt="Code Automata 1.1 hackathon"><b>Code Automata 1.1 hackathon</b><small>Built a project in 24 hours, hosted by CSMU</small></a>
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_artificialintelligence-sentimentanalysis-activity-7307679708589056000-NYca" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/dtcNTxMX/AI-hackethon-certificate-1.png" alt="UAI University hackathon"><b>UAI University hackathon</b><small>Built a project in a competitive hackathon</small></a>
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg" alt="Java"><b>Java</b><small>OOP, Swing, Core Java, Collections</small></a>
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg" alt="Python and Django"><b>Python and Django</b><small>OOP, scripting, views, templates</small></a>
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-learningneverstops-udemy-activity-7287108081287598080-KwaW" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/SRYvvQB7/Web-devleopement.jpg" alt="Complete 2024 Web Development Bootcamp"><b>Complete 2024 Web Development Bootcamp</b><small>HTML, CSS, JavaScript, React, Node.js, Express</small></a>
-      <a class="cert" href="https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT" target="_blank" rel="noopener"><img loading="lazy" src="https://i.postimg.cc/k494b57w/certificate-Java-script.png" alt="JavaScript"><b>JavaScript</b><small>Functions, DOM, events, async, ES6</small></a>
-      <a class="cert" href="https://www.credly.com/badges/5589d019-7934-41bd-8edc-abe775780f16/public_url" target="_blank" rel="noopener"><img class="badge" loading="lazy" src="https://i.postimg.cc/V6zXKZNb/aws-educate-getting-started-with-databases.png" alt="AWS Educate: Getting Started with Databases"><b>AWS Educate: Getting Started with Databases</b><small>Credly badge</small></a>
-      <a class="cert" href="https://www.credly.com/badges/ad5f1587-34a4-4296-9acb-8a9afdfe1eed/public_url" target="_blank" rel="noopener"><img class="badge" loading="lazy" src="https://i.postimg.cc/v8WtjWcd/aws-educate-machine-learning-foundations.png" alt="AWS Educate: Machine Learning Foundations"><b>AWS Educate: Machine Learning Foundations</b><small>Credly badge</small></a>
-  </div>
-</section>
+<section class="wrap hero" id="hero" style="padding-bottom:3rem"></section>
+<section id="work" class="wrap"><h2>Where I've worked</h2><ol class="tl" id="r-work"></ol></section>
+<section id="projects" class="wrap"><h2>Projects</h2><div class="grid" id="r-projects"></div><p class="more" id="more"></p></section>
+<section id="skills" class="wrap"><h2>Skills</h2><dl id="r-skills"></dl></section>
+<section id="learning" class="wrap"><h2>Education and certificates</h2><p id="r-edu"></p><div class="certs" id="r-certs"></div></section>
 </main>
-
 <footer id="contact">
   <div class="wrap">
     <h2>Let's build something.</h2>
-    <a class="mail" href="mailto:nikhilsutar621@gmail.com">nikhilsutar621@gmail.com</a>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/carpentrycoder/" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.hackerrank.com/profile/nikhilsutar621" target="_blank" rel="noopener">HackerRank</a>
-      <a href="https://x.com/CodingD47206" target="_blank" rel="noopener">X</a>
-    </div>
-    <small class="copy">© <span id="yr">2026</span> Nikhil M. Sutar. Mumbai, India.</small>
+    <a class="mail" id="r-mail"></a>
+    <div class="social" id="r-social"></div>
+    <small class="copy">© <span id="yr"></span> <span id="r-full"></span>. <span id="r-loc"></span>.</small>
   </div>
 </footer>
-
+<noscript><p class="wrap" style="padding:2rem 0">This portfolio needs JavaScript to show its content.</p></noscript>
+<script type="application/json" id="site-data">
+{
+ "profile": {
+  "name": "Nikhil Sutar",
+  "full": "Nikhil M. Sutar",
+  "location": "Mumbai, India",
+  "photo": "https://i.postimg.cc/J7g7ZvcW/IMG-20260908-091428.png",
+  "headline": "I build backend systems and AI features that ship.",
+  "intro": "I'm Nikhil, a backend developer in Mumbai. I work with Python, Django and REST APIs, and add machine learning or LLMs when they make a product better. Right now I'm interning at Publicis Groupe on Nestlé and Adobe projects.",
+  "resume": "https://drive.google.com/file/d/1eUwFi7moJ_Qnt9lywDxv1v4DhQmSMSRX/view?usp=sharing",
+  "email": "nikhilsutar621@gmail.com",
+  "endpoint": "GET /nikhil",
+  "edu": {
+   "title": "B.E. in Artificial Intelligence and Data Science",
+   "sub": "Konkan Gyanpeeth College of Engineering, University of Mumbai, 2023 to 2026. CGPI 7.28"
+  },
+  "links": [
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/"
+   },
+   {
+    "label": "GitHub",
+    "url": "https://github.com/carpentrycoder/"
+   },
+   {
+    "label": "HackerRank",
+    "url": "https://www.hackerrank.com/profile/nikhilsutar621"
+   },
+   {
+    "label": "X",
+    "url": "https://x.com/CodingD47206"
+   }
+  ],
+  "panel": [
+   {
+    "key": "name",
+    "value": "Nikhil M. Sutar"
+   },
+   {
+    "key": "role",
+    "value": "Backend developer"
+   },
+   {
+    "key": "stack",
+    "value": [
+     "Python",
+     "Django",
+     "FastAPI",
+     "PostgreSQL"
+    ]
+   },
+   {
+    "key": "won",
+    "value": "1st place, UAi HAWK-ATHON 2026"
+   },
+   {
+    "key": "now",
+    "value": "Publicis Groupe, Mumbai"
+   },
+   {
+    "key": "degree",
+    "value": "B.E. AI & Data Science, 2026"
+   },
+   {
+    "key": "open_to",
+    "value": "Backend and AI roles"
+   }
+  ]
+ },
+ "work": [
+  {
+   "role": "Backend Developer Intern, Publicis Groupe",
+   "when": "May 2026 to present, Mumbai, on site",
+   "desc": "Building backend and marketing technology on projects for Nestlé and Adobe. I build and tune APIs and data workflows in Python, Django, REST and SQL, and I worked on Adobe creative automation that adapts PSD and AI files into many sizes automatically.",
+   "now": true
+  },
+  {
+   "role": "Backend Developer Intern, Altissadvance Tech (XIRCLS)",
+   "when": "Jun to Sep 2025, on site",
+   "desc": "Built and optimized scalable services with Python, Django and MySQL. I worked on architecture, algorithms and deployment, which cut bugs and sped up delivery.",
+   "now": false
+  },
+  {
+   "role": "Python Developer, Freelance, Success Classes of Engineering",
+   "when": "2025, hybrid",
+   "desc": "Built a responsive, mobile-friendly website that connects students with engineering courses. It is live and used by real students.",
+   "now": false
+  }
+ ],
+ "projects": [
+  {
+   "big": true,
+   "award": true,
+   "badge": "1st place, International UAi HAWK-ATHON 2026",
+   "img": "",
+   "alt": "",
+   "title": "Rural telehealth platform for low-bandwidth networks",
+   "desc": "Built in 24 hours with my team CipherX at Universal Ai University. Many people in rural India struggle to reach a doctor, so we built one system that connects patients, doctors and pharmacies, and works on weak internet. The judges praised its practical approach, AI integration and real-world usability.",
+   "items": [
+    "Remote doctor consultations",
+    "AI symptom guidance for patients",
+    "Digital health records",
+    "Search for medicines available at nearby pharmacies",
+    "Optimized for low-bandwidth rural networks"
+   ],
+   "note": "Team CipherX: Nikhil Sutar, Omkar Patkar, Mangesh Bhalerao and Karan Surve, representing Konkan Gyanpeeth College of Engineering. I worked on the Python backend.",
+   "tags": [
+    "React",
+    "TypeScript",
+    "FastAPI",
+    "PostgreSQL (NeonDB)",
+    "Groq API",
+    "OpenRouter"
+   ],
+   "links": [
+    {
+     "label": "Live project",
+     "url": "https://lnkd.in/dRUvwgFV"
+    },
+    {
+     "label": "LinkedIn post",
+     "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_ai-hawkathon-hackathon-ugcPost-7438900681069182976-dX4e/"
+    }
+   ]
+  },
+  {
+   "big": true,
+   "award": false,
+   "badge": "",
+   "img": "",
+   "alt": "",
+   "title": "SWASTH-AI: AI healthcare and diet system",
+   "desc": "My final-year project (Jun to Dec 2025). It plans a diet around a person's health, tastes and allergies, then explains its advice in plain language.",
+   "items": [
+    "Personal diet plans from ML regression and neural networks (MLP)",
+    "Allergy and preference filtering with rules and similarity models",
+    "Meal timing with LSTM sequence models",
+    "Nutritional deficiency prediction through multi-label classification",
+    "LLM chat that explains each recommendation"
+   ],
+   "note": "",
+   "tags": [
+    "Python",
+    "TensorFlow / LSTM",
+    "scikit-learn",
+    "LLM"
+   ],
+   "links": [
+    {
+     "label": "View live project",
+     "url": "https://github.com/carpentrycoder/"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.postimg.cc/CLNtZ9Fm/sales-gyaan.png",
+   "alt": "SaleGyaan dashboard screenshot",
+   "title": "SaleGyaan: sales prediction web app",
+   "desc": "Upload a sales CSV and get validated data, trend charts and ML forecasts for an online store.",
+   "items": [
+    "CSV upload with validation",
+    "ML-based sales prediction",
+    "LLM-assisted analysis and insights"
+   ],
+   "note": "",
+   "tags": [
+    "Python",
+    "ML",
+    "LLM"
+   ],
+   "links": [
+    {
+     "label": "LinkedIn post",
+     "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_datavisualization-predictiveanalytics-ai-activity-7265932014648786944-ML94"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.postimg.cc/br0V14Ld/Aa-jao-sikha-dunga.png",
+   "alt": "Success Classes of Engineering website screenshot",
+   "title": "Success Classes of Engineering",
+   "desc": "A Flask website for an engineering coaching business, built as a freelance client project.",
+   "items": [
+    "Responsive on phones and laptops",
+    "Helps students find and join courses"
+   ],
+   "note": "",
+   "tags": [
+    "Flask",
+    "Python",
+    "Responsive UI"
+   ],
+   "links": [
+    {
+     "label": "Live site",
+     "url": "https://successclassesofengineering.com/"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.postimg.cc/508hbcGN/pranav-interiors-and-decorators-onrender-ss.jpg",
+   "alt": "Pranav Interiors website screenshot",
+   "title": "Pranav Interiors",
+   "desc": "A Django website for an interior design business, deployed on Render.",
+   "items": [
+    "Service showcase for clients",
+    "Server-rendered Django templates"
+   ],
+   "note": "",
+   "tags": [
+    "Django",
+    "Render"
+   ],
+   "links": [
+    {
+     "label": "Live site",
+     "url": "https://pranav-interiors-and-decorators.onrender.com/"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.postimg.cc/Qd9HLP6g/1712140961216.png",
+   "alt": "Weather app screenshot",
+   "title": "Weather app",
+   "desc": "A small web app that fetches live weather from an open API.",
+   "items": [],
+   "note": "",
+   "tags": [
+    "JavaScript",
+    "REST API"
+   ],
+   "links": [
+    {
+     "label": "Live site",
+     "url": "https://carpentrycoder.github.io/Sutar.ka.Weather.app/"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.postimg.cc/T1bxcFZH/Screenshot-2025-01-20-144943.png",
+   "alt": "Sutar_ki_dukaan store screenshot",
+   "title": "Sutar_ki_dukaan",
+   "desc": "An e-commerce platform built with the MERN stack.",
+   "items": [],
+   "note": "",
+   "tags": [
+    "MongoDB",
+    "Express",
+    "React",
+    "Node.js"
+   ],
+   "links": [
+    {
+     "label": "LinkedIn post",
+     "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-activity-7188483974233473024-9AaZ"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.postimg.cc/kgpjnGVK/1712671865805.jpg",
+   "alt": "Sutarflix screenshot",
+   "title": "Sutarflix",
+   "desc": "A Flask website for streaming movies.",
+   "items": [],
+   "note": "",
+   "tags": [
+    "Flask",
+    "Python"
+   ],
+   "links": [
+    {
+     "label": "LinkedIn post",
+     "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flaskdevelopment-webdevelopment-moviestreaming-activity-7180954773746044928-raXZ"
+    }
+   ]
+  },
+  {
+   "big": false,
+   "award": false,
+   "badge": "",
+   "img": "https://i.ibb.co/F85KqGy/dashboard.png",
+   "alt": "Tourmate dashboard screenshot",
+   "title": "Tourmate",
+   "desc": "A travel planning desktop application.",
+   "items": [],
+   "note": "",
+   "tags": [
+    "Java",
+    "Swing"
+   ],
+   "links": [
+    {
+     "label": "LinkedIn post",
+     "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_tourmate-travelapp-javadevelopment-activity-7183136207487270922-nO6G"
+    }
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "k": "Languages",
+   "v": "Python, Java, JavaScript, SQL, C"
+  },
+  {
+   "k": "Backend",
+   "v": "Django, Django REST, Flask, FastAPI, Node.js, Webhooks, Shopify, Prometheus, Grafana"
+  },
+  {
+   "k": "Frontend",
+   "v": "React, Next.js, Tailwind, Bootstrap, Mantine UI"
+  },
+  {
+   "k": "Databases",
+   "v": "PostgreSQL, MySQL, MongoDB, SQLite, Microsoft SQL Server"
+  },
+  {
+   "k": "AI and data",
+   "v": "Machine learning, deep learning, LLMs, Hugging Face, NumPy, Pandas, scikit-learn, Power BI"
+  },
+  {
+   "k": "Tools",
+   "v": "Git, GitHub, Docker, VS Code, PyCharm, IntelliJ, Jupyter, Google Colab"
+  }
+ ],
+ "certs": [
+  {
+   "title": "Winner, International UAi HAWK-ATHON 2026",
+   "sub": "1st place with team CipherX, 24 hours",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_ai-hawkathon-hackathon-ugcPost-7438900681069182976-dX4e/",
+   "img": "https://i.postimg.cc/yYwknFvT/hackthon-certificate-2.jpg",
+   "badge": false
+  },
+  {
+   "title": "Code Automata 1.1 hackathon",
+   "sub": "Built a project in 24 hours, hosted by CSMU",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_hackathonexperience-pythondeveloper-machinelearning-activity-7317106404069146624-ptBu",
+   "img": "https://i.postimg.cc/Nj3xFRpN/Whats-App-Image-2025-04-13-at-1-43-09-PM.jpg",
+   "badge": false
+  },
+  {
+   "title": "UAI University hackathon",
+   "sub": "Built a project in a competitive hackathon",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_artificialintelligence-sentimentanalysis-activity-7307679708589056000-NYca",
+   "img": "https://i.postimg.cc/dtcNTxMX/AI-hackethon-certificate-1.png",
+   "badge": false
+  },
+  {
+   "title": "Java",
+   "sub": "OOP, Swing, Core Java, Collections",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_certificate-of-java-this-is-my-project-activity-7184223849381519360-EJtr",
+   "img": "https://i.postimg.cc/TwXyJ9JV/java-certificate.jpg",
+   "badge": false
+  },
+  {
+   "title": "Python and Django",
+   "sub": "OOP, scripting, views, templates",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_flask-webdevelopment-d-activity-7180985773574262784-_F7o",
+   "img": "https://i.postimg.cc/fkQ9pBTJ/Python-certificate.jpg",
+   "badge": false
+  },
+  {
+   "title": "Complete 2024 Web Development Bootcamp",
+   "sub": "HTML, CSS, JavaScript, React, Node.js, Express",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_webdevelopment-learningneverstops-udemy-activity-7287108081287598080-KwaW",
+   "img": "https://i.postimg.cc/SRYvvQB7/Web-devleopement.jpg",
+   "badge": false
+  },
+  {
+   "title": "JavaScript",
+   "sub": "Functions, DOM, events, async, ES6",
+   "url": "https://www.linkedin.com/posts/nikhil-sutar-b5471b2b7_im-happy-to-share-that-ive-obtained-a-new-activity-7287064158934626304-d-PT",
+   "img": "https://i.postimg.cc/k494b57w/certificate-Java-script.png",
+   "badge": false
+  },
+  {
+   "title": "AWS Educate: Getting Started with Databases",
+   "sub": "Credly badge",
+   "url": "https://www.credly.com/badges/5589d019-7934-41bd-8edc-abe775780f16/public_url",
+   "img": "https://i.postimg.cc/V6zXKZNb/aws-educate-getting-started-with-databases.png",
+   "badge": true
+  },
+  {
+   "title": "AWS Educate: Machine Learning Foundations",
+   "sub": "Credly badge",
+   "url": "https://www.credly.com/badges/ad5f1587-34a4-4296-9acb-8a9afdfe1eed/public_url",
+   "img": "https://i.postimg.cc/v8WtjWcd/aws-educate-machine-learning-foundations.png",
+   "badge": true
+  }
+ ]
+}
+</script>
 <script>
 (function(){
-  var root=document.documentElement,btn=document.getElementById('theme');
-  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
-  btn.addEventListener('click',function(){
-    var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
-    var next=dark?'light':'dark';root.setAttribute('data-theme',next);
-    try{localStorage.setItem('theme',next)}catch(e){}
-  });
-  document.getElementById('yr').textContent=new Date().getFullYear();
+var D=JSON.parse(document.getElementById('site-data').textContent);
+var $=function(i){return document.getElementById(i)};
+var RE=/(<script type="application\/json" id="site-data">)[\s\S]*?(<\/script>)/;
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function u(s){s=String(s||'').trim();return/^(javascript|data|vbscript):/i.test(s)?'#':esc(s)}
+function ext(s){return ' href="'+u(s)+'" target="_blank" rel="noopener"'}
+function pv(v){return Array.isArray(v)?'['+v.map(function(x){return'"'+esc(x)+'"'}).join(', ')+']':'"'+esc(v)+'"'}
+function vis(a){return a.filter(function(x){return!x.hide})}
+function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function render(){
+ var p=D.profile,pn=vis(p.panel),n=pn.length;
+ $('logo').textContent=p.name;
+ var pl=pn.map(function(e,i){return'<span class="l" style="animation-delay:'+(.2+i*.25).toFixed(2)+'s">  <span class="k">"'+esc(e.key)+'"</span>: '+pv(e.value)+(i<n-1?',':'')+'</span>'}).join('\n');
+ $('hero').innerHTML='<div>'+(p.photo?'<img class="me" src="'+u(p.photo)+'" alt="'+esc(p.name)+'" width="84" height="84">':'')+'<h1>'+esc(p.headline)+'</h1><p>'+esc(p.intro)+'</p><div class="btns"><a class="btn primary" href="#projects">See my projects</a>'+(p.resume?'<a class="btn"'+ext(p.resume)+'>Download resume</a>':'')+'</div></div><div class="panel" aria-label="Profile summary"><div class="bar"><span>'+esc(p.endpoint)+'</span><b>200 OK</b></div><pre><span class="l" style="animation-delay:0s">{</span>\n'+pl+'\n<span class="l" style="animation-delay:'+(.2+n*.25).toFixed(2)+'s">}</span></pre></div>';
+ var wk=vis(D.work);$('work').hidden=!wk.length;
+ $('r-work').innerHTML=wk.map(function(w){return'<li'+(w.now?' class="now"':'')+'><h3>'+esc(w.role)+'</h3><div class="when">'+esc(w.when)+'</div><p>'+esc(w.desc)+'</p></li>'}).join('');
+ $('r-projects').innerHTML=vis(D.projects).map(function(c){
+  return'<article class="card'+(c.big?' big':'')+(c.award?' award':'')+'">'+(c.badge?'<span class="win">'+esc(c.badge)+'</span>':'')+(c.img?'<img class="shot" loading="lazy" src="'+u(c.img)+'" alt="'+esc(c.alt||c.title)+'">':'')+'<h3>'+esc(c.title)+'</h3>'+(c.desc?'<p class="muted">'+esc(c.desc)+'</p>':'')+(c.items.length?'<ul>'+c.items.map(function(i){return'<li>'+esc(i)+'</li>'}).join('')+'</ul>':'')+(c.note?'<p class="muted">'+esc(c.note)+'</p>':'')+(c.tags.length?'<div class="tags">'+c.tags.map(function(t){return'<span>'+esc(t)+'</span>'}).join('')+'</div>':'')+(c.links.length?'<div class="links">'+c.links.map(function(l){return'<a'+ext(l.url)+'>'+esc(l.label)+'</a>'}).join('')+'</div>':'')+'</article>'}).join('');
+ var g=vis(p.links).filter(function(l){return/github/i.test(l.label)})[0];
+ $('more').innerHTML=g?'More code is on <a'+ext(g.url)+'>GitHub</a>.':'';
+ $('r-skills').innerHTML=vis(D.skills).map(function(s){return'<dt>'+esc(s.k)+'</dt><dd>'+esc(s.v)+'</dd>'}).join('');
+ $('r-edu').innerHTML='<strong>'+esc(p.edu.title)+'</strong><br><span class="muted">'+esc(p.edu.sub)+'</span>';
+ $('r-certs').innerHTML=vis(D.certs).map(function(c){var t=c.url?'a':'div';return'<'+t+' class="cert"'+(c.url?ext(c.url):'')+'>'+(c.img?'<img'+(c.badge?' class="badge"':'')+' loading="lazy" src="'+u(c.img)+'" alt="'+esc(c.title)+'">':'')+'<b>'+esc(c.title)+'</b><small>'+esc(c.sub)+'</small></'+t+'>'}).join('');
+ $('r-mail').href='mailto:'+p.email;$('r-mail').textContent=p.email;
+ $('r-social').innerHTML=vis(p.links).map(function(l){return'<a'+ext(l.url)+'>'+esc(l.label)+'</a>'}).join('');
+ $('r-full').textContent=p.full;$('r-loc').textContent=p.location;
+ $('yr').textContent=new Date().getFullYear();
+}
+render();
+
+/* theme */
+var root=document.documentElement,btn=$('theme');
+try{var s0=localStorage.getItem('theme');if(s0)root.setAttribute('data-theme',s0)}catch(e){}
+btn.addEventListener('click',function(){
+ var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+ var nx=dark?'light':'dark';root.setAttribute('data-theme',nx);
+ try{localStorage.setItem('theme',nx)}catch(e){}
+});
+
+/* hidden admin panel: open this page with #admin at the end of the address */
+var SC={
+profile:{single:1,f:[['name','Short name (header)'],['full','Full name (footer)'],['location','Location'],['photo','Photo URL'],['headline','Headline'],['intro','Intro paragraph','area'],['resume','Resume link'],['email','Email'],['endpoint','Panel title, for example GET /nikhil'],['edu.title','Education title'],['edu.sub','Education details']]},
+panel:{t:'key',n:{key:'',value:''},f:[['key','Key'],['value','Value (separate list items with | )','pipe']]},
+links:{t:'label',n:{label:'',url:''},f:[['label','Label'],['url','URL']]},
+work:{t:'role',n:{role:'New role',when:'',desc:'',now:false},f:[['role','Role and company'],['when','Dates and place'],['desc','Description','area'],['now','Current role','bool']]},
+projects:{t:'title',n:{big:false,award:false,badge:'',img:'',alt:'',title:'New project',desc:'',items:[],note:'',tags:[],links:[]},f:[['title','Title'],['badge','Badge text (optional)'],['desc','Description','area'],['items','Bullet points, one per line','lines'],['note','Extra note (optional)','area'],['tags','Tags, comma separated','csv'],['links','Links, one per line as: Label | URL','pairs'],['img','Screenshot URL (optional)'],['alt','Screenshot description'],['big','Wide card','bool'],['award','Highlight border','bool']]},
+skills:{t:'k',n:{k:'New group',v:''},f:[['k','Group name'],['v','Skills, comma separated','area']]},
+certs:{t:'title',n:{title:'New certificate',sub:'',url:'',img:'',badge:false},f:[['title','Title'],['sub','Details'],['url','Link'],['img','Image URL'],['badge','Square badge image','bool']]}
+};
+var TABS=[['Profile','profile'],['Panel','panel'],['Links','links'],['Experience','work'],['Projects','projects'],['Skills','skills'],['Certificates','certs']];
+var tr=function(x){return x.trim()},ne=function(x){return x.length>0};
+var TY={
+pipe:[function(v){return Array.isArray(v)?v.join(' | '):(v||'')},function(s){var a=s.split('|').map(tr).filter(ne);return a.length>1?a:s.trim()}],
+lines:[function(v){return(v||[]).join('\n')},function(s){return s.split('\n').map(tr).filter(ne)}],
+csv:[function(v){return(v||[]).join(', ')},function(s){return s.split(',').map(tr).filter(ne)}],
+pairs:[function(v){return(v||[]).map(function(l){return l.label+' | '+l.url}).join('\n')},function(s){return s.split('\n').map(function(x){var i=x.indexOf('|');return i<0?null:{label:x.slice(0,i).trim(),url:x.slice(i+1).trim()}}).filter(Boolean)}]};
+function arr(n){return n==='panel'||n==='links'?D.profile[n]:D[n]}
+function gv(o,k){return k.split('.').reduce(function(a,b){return a&&a[b]},o)}
+function sv(o,k,v){var a=k.split('.'),l=a.pop();a.forEach(function(x){o=o[x]=o[x]||{}});o[l]=v}
+var uid=0,cur='profile',H=[],R=[];
+function snap(){H.push(JSON.stringify(D));if(H.length>60)H.shift();R=[];ub()}
+function ub(){if($('a-un')){$('a-un').disabled=!H.length;$('a-re').disabled=!R.length}}
+function undo(){if(!H.length)return;R.push(JSON.stringify(D));D=JSON.parse(H.pop());render();ed(cur);ub();st('Undone.')}
+function redo(){if(!R.length)return;H.push(JSON.stringify(D));D=JSON.parse(R.pop());render();ed(cur);ub();st('Redone.')}
+function fld(o,f){
+ var k=f[0],ty=f[2]||'text',v=gv(o,k),w=mk('div'),id='f'+(++uid),lb=mk('label',0,f[1]),el;
+ lb.htmlFor=id;
+ if(ty==='bool'){el=mk('input');el.type='checkbox';el.checked=!!v;el.id=id;lb.textContent='';lb.append(el,' '+f[1])}
+ else{var big=/^(area|lines|pairs)$/.test(ty);el=mk(big?'textarea':'input');if(big)el.rows=ty==='area'?4:5;else el.type='text';el.id=id;el.value=TY[ty]?TY[ty][0](v):(v==null?'':v)}
+ el.onchange=function(){snap();sv(o,k,ty==='bool'?el.checked:(TY[ty]?TY[ty][1](el.value):el.value));render()};
+ w.append(lb);if(ty!=='bool')w.append(el);return w;
+}
+function ed(n,last){
+ var box=$('a-body'),S=SC[n],A=arr(n);box.textContent='';
+ if(S.single){S.f.forEach(function(f){box.append(fld(D.profile,f))});return}
+ A.forEach(function(it,i){
+  var d=mk('details'),sm=mk('summary','sm'),tt=mk('span','st',String(it[S.t]||'(untitled)').slice(0,60)+(it.hide?' (hidden)':''));
+  sm.append(tt);d.append(sm);
+  if(last&&i===A.length-1)d.open=true;
+  [['↑',-1,'Move up'],['↓',1,'Move down'],['Delete',0,'Delete this item']].forEach(function(b){
+   var x=mk('button',b[1]?'btn sq':'btn dl',b[0]);x.type='button';x.title=b[2];x.setAttribute('aria-label',b[2]+': '+tt.textContent);
+   x.onclick=function(ev){
+    ev.preventDefault();ev.stopPropagation();
+    if(b[1]){var j=i+b[1];if(j<0||j>=A.length)return;snap();A.splice(i,1);A.splice(j,0,it)}
+    else{snap();A.splice(i,1)}
+    render();ed(n);if(!b[1])st('Deleted. Press Undo to bring it back.')};
+   sm.append(x)});
+  S.f.forEach(function(f){d.append(fld(it,f))});
+  d.append(fld(it,['hide','Hide this item from the site','bool']));
+  box.append(d)});
+ var ad=mk('button','btn primary','+ Add item');ad.type='button';
+ ad.onclick=function(){snap();var nw=JSON.parse(JSON.stringify(S.n));nw.hide=true;A.push(nw);render();ed(n,1);st('Added as hidden. Fill it in, then untick Hide this item to show it on the site.')};
+ box.append(ad);
+}
+function tab(n){cur=n;[].forEach.call(document.querySelectorAll('#a-tabs button'),function(b){b.setAttribute('aria-pressed',b.dataset.t===n)});ed(n)}
+function st(m){$('a-st').textContent=m}
+function ser(){return JSON.stringify(D,null,1).replace(/</g,'\\u003c')}
+function inj(t){return t.replace(RE,function(m,a,b){return a+'\n'+ser()+'\n'+b})}
+function b64(s){var by=new TextEncoder().encode(s),x='';for(var i=0;i<by.length;i++)x+=String.fromCharCode(by[i]);return btoa(x)}
+function unb(s){var x=atob(s.replace(/\s/g,'')),by=new Uint8Array(x.length);for(var i=0;i<x.length;i++)by[i]=x.charCodeAt(i);return new TextDecoder().decode(by)}
+function lk(){KEY=null;H=[];R=[];if($('c-t'))$('c-t').value='';if($('adm'))$('adm').hidden=true;if($('adg'))$('adg').hidden=true;document.body.style.overflow=''}
+function cl(){history.replaceState(null,'',location.pathname+location.search);lk()}
+function build(){
+ var a=mk('div');a.id='adm';a.setAttribute('role','dialog');a.setAttribute('aria-modal','true');a.setAttribute('aria-label','Edit site content');
+ a.innerHTML='<div class="bar2"><div class="wrap row"><b class="at">Edit site content</b><span style="flex:1"></span><button class="btn" id="a-un" type="button" disabled>Undo</button><button class="btn" id="a-re" type="button" disabled>Redo</button><button class="btn primary" id="a-save" type="button">Save to GitHub</button><button class="btn" id="a-exp" type="button">Export JSON</button><button class="btn" id="a-x" type="button">Close</button></div></div><div class="wrap" style="padding:1rem 0 4rem"><p id="a-st" class="muted" role="status" aria-live="polite">Changes show on the page right away, but only Save to GitHub publishes them for everyone.</p><details><summary>GitHub connection</summary><label for="c-o">GitHub username</label><input type="text" id="c-o"><label for="c-r">Repository</label><input type="text" id="c-r"><label for="c-b">Branch</label><input type="text" id="c-b"><label for="c-p">File path</label><input type="text" id="c-p"><label for="c-t">Access token (fine-grained, this repository only, Contents: read and write)</label><input type="password" id="c-t" autocomplete="off"><label><input type="checkbox" id="c-k"> Remember token in this browser (locked with your admin password)</label></details><div class="row" id="a-tabs" style="margin:1rem 0"></div><div id="a-body"></div></div>';
+ document.body.append(a);
+ var h=location.hostname,o=h.indexOf('.github.io')>0?h.split('.')[0]:'',sg=location.pathname.split('/')[1],r=o?((sg&&sg.indexOf('.')<0)?sg:o+'.github.io'):'',c={};
+ try{c=JSON.parse(localStorage.getItem('adm-cfg')||'{}')}catch(e){}
+ $('c-o').value=c.o||o;$('c-r').value=c.r||r;$('c-b').value=c.b||'main';$('c-p').value=c.p||'index.html';
+  TABS.forEach(function(x){var b=mk('button','btn',x[0]);b.type='button';b.dataset.t=x[1];b.onclick=function(){tab(x[1])};$('a-tabs').append(b)});
+ $('a-x').onclick=cl;$('a-un').onclick=undo;$('a-re').onclick=redo;
+ $('a-exp').onclick=function(){var l=mk('a');l.href=URL.createObjectURL(new Blob([ser()],{type:'application/json'}));l.download='site-data.json';l.click()};
+ $('a-save').onclick=async function(){
+  var o=$('c-o').value.trim(),r=$('c-r').value.trim(),b=$('c-b').value.trim()||'main',p=$('c-p').value.trim()||'index.html',t=$('c-t').value.trim();
+  if(!o||!r||!t){st('Fill in username, repository and token under GitHub connection first.');$('adm').querySelector('details').open=true;return}
+  try{localStorage.setItem('adm-cfg',JSON.stringify({o:o,r:r,b:b,p:p}));var vv=ld()||{};if($('c-k').checked)vv.t=await en(t);else delete vv.t;sl(vv)}catch(e){}
+  var api='https://api.github.com/repos/'+o+'/'+r+'/contents/'+p,H={Authorization:'Bearer '+t,Accept:'application/vnd.github+json'};
+  st('Saving...');
+  try{
+   var g=await fetch(api+'?ref='+encodeURIComponent(b),{headers:H});
+   if(!g.ok)throw new Error(g.status===401?'GitHub rejected the token.':g.status===404?'File, repository or branch not found, or the token has no access to it.':'GitHub error '+g.status);
+   var j=await g.json(),src=unb(j.content);
+   if(!RE.test(src))throw new Error('That file has no site data block, so nothing was changed.');
+   var w=await fetch(api,{method:'PUT',headers:H,body:JSON.stringify({message:'Update portfolio content from admin panel',content:b64(inj(src)),sha:j.sha,branch:b})});
+   if(!w.ok)throw new Error(w.status===409?'The file changed on GitHub. Reload this page and try again.':(w.status===403||w.status===404)?'The token cannot write to this repository (it needs Contents: read and write).':'GitHub error '+w.status);
+   st('Saved. GitHub Pages usually shows the update in about a minute.');
+  }catch(e){st(e.message||'Could not save.')}
+ };
+}
+/*CRYPTO*/
+var KEY=null,enc=new TextEncoder();
+function b2s(b){var a=new Uint8Array(b),x='';for(var i=0;i<a.length;i++)x+=String.fromCharCode(a[i]);return btoa(x)}
+function s2b(s){var x=atob(s),a=new Uint8Array(x.length);for(var i=0;i<x.length;i++)a[i]=x.charCodeAt(i);return a}
+async function dk(pw,salt){var m=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:310000,hash:'SHA-256'},m,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+async function en(t){var iv=crypto.getRandomValues(new Uint8Array(12));return{iv:b2s(iv),ct:b2s(await crypto.subtle.encrypt({name:'AES-GCM',iv:iv},KEY,enc.encode(t)))}}
+async function de(o){return new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:s2b(o.iv)},KEY,s2b(o.ct)))}
+/*END*/
+function ld(){try{return JSON.parse(localStorage.getItem('adm-v')||'null')}catch(e){return null}}
+function sl(v){try{localStorage.setItem('adm-v',JSON.stringify(v))}catch(e){}}
+function gate(){
+ var v=ld();
+ if(!$('adg')){
+  var g=mk('div');g.id='adg';g.setAttribute('role','dialog');g.setAttribute('aria-modal','true');g.setAttribute('aria-label','Admin password');
+  g.innerHTML='<form class="gbox" id="g-f"><h2 id="g-t" style="font-size:1.5rem;margin-bottom:.5rem"></h2><label for="g-p">Password</label><input type="password" id="g-p" autocomplete="current-password"><div id="g-2"><label for="g-q">Repeat password</label><input type="password" id="g-q" autocomplete="new-password"></div><p id="g-m" class="muted" role="status" aria-live="polite" style="margin:.8rem 0"></p><div class="row"><button class="btn primary" type="submit">Unlock</button><button class="btn" type="button" id="g-x">Cancel</button></div><p style="margin-top:1rem"><button class="lnk" type="button" id="g-r">Forgot password? Reset</button></p></form>';
+  document.body.append(g);
+  $('g-f').onsubmit=unlock;$('g-x').onclick=cl;
+  $('g-r').onclick=function(){if(confirm('This removes the saved password and token from this browser. Continue?')){try{localStorage.removeItem('adm-v');localStorage.removeItem('adm-t')}catch(e){}gate()}};
+ }
+ $('g-t').textContent=v?'Admin password':'Create an admin password';
+ $('g-2').hidden=!!v;$('g-r').hidden=!v;
+ $('g-m').textContent=v?'':'At least 8 characters. It locks the token saved in this browser. There is no recovery, so if you forget it, use Reset and enter the token again.';
+ $('adg').hidden=false;document.body.style.overflow='hidden';$('g-p').focus();
+}
+async function unlock(e){
+ e.preventDefault();
+ var pw=$('g-p').value,v=ld(),m=$('g-m');
+ if(!window.crypto||!crypto.subtle){m.textContent='This browser cannot check passwords here. Open the site over https.';return}
+ try{
+  if(!v){
+   if(pw.length<8){m.textContent='Use at least 8 characters.';return}
+   if(pw!==$('g-q').value){m.textContent='The two passwords do not match.';return}
+   var salt=crypto.getRandomValues(new Uint8Array(16));KEY=await dk(pw,salt);v={s:b2s(salt),c:await en('ok')};sl(v);
+  }else{
+   KEY=await dk(pw,s2b(v.s));
+   var ok=false;try{ok=(await de(v.c))==='ok'}catch(x){}
+   if(!ok){KEY=null;m.textContent='Wrong password.';return}
+  }
+ }catch(x){KEY=null;m.textContent='Something went wrong. Try again.';return}
+ try{localStorage.removeItem('adm-t')}catch(x){}
+ $('g-p').value='';$('g-q').value='';$('adg').hidden=true;op2();
+}
+function op(){if(KEY)op2();else gate()}
+function op2(){
+ if(!$('adm'))build();
+ var v=ld();$('c-t').value='';$('c-k').checked=false;
+ if(v&&v.t)de(v.t).then(function(t){$('c-t').value=t;$('c-k').checked=true}).catch(function(){});
+ $('adm').hidden=false;document.body.style.overflow='hidden';tab(cur);
+}
+function chk(){if(location.hash==='#admin')op();else lk()}
+addEventListener('hashchange',chk);
+addEventListener('keydown',function(e){if(e.key==='Escape'&&(($('adm')&&!$('adm').hidden)||($('adg')&&!$('adg').hidden)))cl()});
+addEventListener('keydown',function(e){if(!$('adm')||$('adm').hidden||!(e.ctrlKey||e.metaKey)||/^(INPUT|TEXTAREA)$/.test(e.target.tagName))return;var k=e.key.toLowerCase();if(k==='z'&&!e.shiftKey){e.preventDefault();undo()}else if(k==='y'||(k==='z'&&e.shiftKey)){e.preventDefault();redo()}});
+chk();
 })();
 </script>
 </body>
