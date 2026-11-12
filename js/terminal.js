@@ -692,50 +692,40 @@
     // OS COMMANDS
     // --------------------------------------
 
-    if (normalized === 'os mac') {
-      setOS('mac');
-    }
+if (normalized === 'os mac') {
+  setOS('mac');
+}
 
-    else if (
-      normalized === 'os win' ||
-      normalized === 'os windows'
-    ) {
-      setOS('win');
-    }
+else if (
+  normalized === 'os win' ||
+  normalized === 'os windows'
+) {
+  setOS('win');
+}
 
-    // --------------------------------------
-    // STANDARD COMMANDS
-    // --------------------------------------
+else if (
+  commands[normalized]
+) {
+  commands[normalized]();
+}
 
-    else if (
-      commands[normalized]
-    ) {
-      commands;
-    }
+else {
+  const b = block('error');
 
-    // --------------------------------------
-    // UNKNOWN COMMAND
-    // --------------------------------------
+  line(
+    b,
+    `Command not found: ${value}`
+  );
 
-    else {
-      const b =
-        block('error');
+  line(
+    b,
+    "Type 'help' to list available commands.",
+    'dim'
+  );
+}
 
-      line(
-        b,
-        `Command not found: ${value}`
-      );
-
-      line(
-        b,
-        "Type 'help' to list available commands.",
-        'dim'
-      );
-    }
-
-    scroll();
-  }
-
+scroll();
+    
   // =========================================================
   // FORM SUBMIT
   // =========================================================
