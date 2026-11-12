@@ -148,13 +148,14 @@ small.copy{color:var(--muted)}
 #adm .btn.dl{padding:.3rem .75rem;color:#d92d20;border-color:#d92d20}
 #adm .btn:disabled{opacity:.4;cursor:default}
 </style>
+  <link rel="stylesheet" href="css/terminal-launcher.css">
 </head>
 <body>
 <!-- Admin: open this page with #admin at the end of the address. Content lives in the site-data block below. -->
 <header>
   <div class="wrap">
     <a class="logo" href="#top" id="logo"></a>
-    <nav aria-label="Sections"><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#learning">Education</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Sections"><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#learning">Education</a><a href="#contact">Contact</a><a class="terminal-launcher" href="terminal.html" aria-label="Open interactive terminal portfolio"><svg aria-hidden="true" viewBox="0 0 24 24" width="27" height="27"><rect x="2.5" y="3.5" width="19" height="17" rx="2.5"></rect><path d="m7 9 3 3-3 3M12.5 15H17"></path></svg><span class="terminal-badge">CLICK ME!</span></a></nav>
     <button id="theme" aria-label="Switch light or dark theme" title="Switch theme">◐</button>
   </div>
 </header>
