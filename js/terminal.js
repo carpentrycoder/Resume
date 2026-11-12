@@ -31,7 +31,7 @@
   const currentPrompt=()=>os==='mac'?'nikhil@portfolio:~$':'C:\\Users\\Nikhil>';
   function setOS(next,announce=true){os=next;document.documentElement.dataset.os=os;prompt.textContent=currentPrompt();title.textContent=os==='mac'?'nikhil@portfolio — zsh':'Command Prompt — nikhil-portfolio';toggle.textContent=os==='mac'?'Switch to Windows':'Switch to macOS';toggle.setAttribute('aria-label',toggle.textContent+' terminal style');try{localStorage.setItem('terminal-os',os)}catch(_){}if(announce){const b=block();line(b,`Interface switched to ${os==='mac'?'macOS':'Windows'} mode.`)}}
   const commands={
-    help(){const b=block();line(b,'AVAILABLE COMMANDS','heading');[['help','Show this command list'],['about','Professional introduction'],['skills','Technical skills'],['projects','Featured projects'],['experience','Professional experience'],['education','Educational background'],['contact','Email and social links'],['resume','Open résumé'],['os mac / os win','Change window style'],['clear / cls','Clear terminal history'],['exit','Return to main portfolio']].forEach(([c,d])=>line(b,`${c.padEnd(18)} ${d}`));},
+    help(){const b=block();line(b,'AVAILABLE COMMANDS','heading');[['help','Show this command list'],['linkedin', 'Open my LinkedIn profile'],['about','Professional introduction'],['skills','Technical skills'],['projects','Featured projects'],['experience','Professional experience'],['education','Educational background'],['contact','Email and social links'],['resume','Open résumé'],['os mac / os win','Change window style'],['clear / cls','Clear terminal history'],['exit','Return to main portfolio']].forEach(([c,d])=>line(b,`${c.padEnd(18)} ${d}`));},
     about(){const b=block();line(b,'ABOUT','heading');line(b,data.about);},
     skills(){const b=block();line(b,'TECHNICAL SKILLS','heading');data.skills.forEach(([k,v])=>line(b,`${k.padEnd(13)} ${v}`));},
     projects(){const b=block();line(b,'FEATURED PROJECTS','heading');data.projects.forEach(([n,d],i)=>{line(b,`${i+1}. ${n}`,'heading');line(b,`   ${d}`)});},
@@ -39,6 +39,21 @@
     education(){const b=block();line(b,'EDUCATION','heading');line(b,data.education[0]);line(b,data.education[1],'dim');},
     contact(){const b=block();line(b,'CONTACT','heading');link(b,data.contact.email,`mailto:${data.contact.email}`);line(b,'');data.contact.links.forEach(([n,u])=>{link(b,n,u);b.append(document.createTextNode('  '))});},
     resume(){const b=block();line(b,'RÉSUMÉ','heading');link(b,'Open / download Nikhil Sutar’s résumé',data.resume);window.open(data.resume,'_blank','noopener,noreferrer');},
+    linkedin() {
+      const linkedinUrl =
+        'https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/';
+    
+      const b = block();
+    
+      line(b, 'LINKEDIN', 'heading');
+      link(b, 'Open Nikhil Sutar on LinkedIn', linkedinUrl);
+    
+      window.open(
+        linkedinUrl,
+        '_blank',
+        'noopener,noreferrer'
+      );
+    },
     clear(){output.replaceChildren();}, cls(){commands.clear();}, exit(){window.location.assign('index.html');}
   };
   function run(raw){const value=raw.trim();if(!value)return;const shown=block('command');line(shown,`${currentPrompt()} ${value}`);history.push(value);historyIndex=history.length;const normalized=value.toLowerCase().replace(/\s+/g,' ');if(normalized==='os mac')setOS('mac');else if(normalized==='os win'||normalized==='os windows')setOS('win');else if(commands[normalized])commands[normalized]();else{const b=block('error');line(b,`Command not found: ${value}`);line(b,"Type 'help' to list available commands.",'dim')}scroll();}
