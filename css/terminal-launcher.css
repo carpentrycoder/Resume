@@ -1,0 +1,8 @@
+.terminal-launcher{position:relative;display:inline-flex!important;align-items:center;gap:.42rem;color:#14c96f!important;border:1px solid color-mix(in srgb,#14c96f 50%,transparent);background:#07130d!important;box-shadow:0 0 0 rgba(20,201,111,0);transition:box-shadow .2s,transform .2s!important}
+.terminal-launcher svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px #14c96f);animation:terminal-shake 1.8s infinite}
+.terminal-launcher:hover{color:#7dffb8!important;box-shadow:0 0 18px rgba(20,201,111,.65);transform:translateY(-1px)}
+.terminal-badge{font:800 .62rem/1 var(--mono);letter-spacing:.06em;color:#061009;background:#54ff9f;border-radius:999px;padding:.31rem .44rem;box-shadow:0 0 12px rgba(84,255,159,.8);animation:terminal-pulse 1.2s ease-in-out infinite}
+@keyframes terminal-shake{0%,75%,100%{transform:translateX(0) rotate(0)}80%{transform:translateX(-2px) rotate(-5deg)}85%{transform:translateX(2px) rotate(5deg)}90%{transform:translateX(-1px) rotate(-3deg)}95%{transform:translateX(1px) rotate(3deg)}}
+@keyframes terminal-pulse{50%{opacity:.68;box-shadow:0 0 20px rgba(84,255,159,1)}}
+@media(max-width:620px){.terminal-badge{display:none}.terminal-launcher{padding:.35rem .45rem!important}}
+@media(prefers-reduced-motion:reduce){.terminal-launcher svg,.terminal-badge{animation:none}}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-os="mac">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive CRT terminal portfolio of Nikhil Sutar, backend developer.">
+  <title>Nikhil Sutar | CRT Terminal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+  <main class="terminal-stage">
+    <section class="terminal-window" aria-label="Interactive terminal portfolio">
+      <header class="titlebar">
+        <div class="mac-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="win-icon" aria-hidden="true">›_</div>
+        <p id="terminal-title">nikhil@portfolio — zsh</p>
+        <div class="win-controls" aria-hidden="true"><span>—</span><span>□</span><span>×</span></div>
+        <button id="os-toggle" type="button" aria-label="Switch to Windows terminal style">Switch to Windows</button>
+      </header>
+      <div class="crt-screen" id="screen">
+        <div class="screen-copy">
+          <div id="output" role="log" aria-live="polite" aria-relevant="additions text"></div>
+          <form id="terminal-form" autocomplete="off">
+            <label class="prompt" id="prompt" for="command-input">nikhil@portfolio:~$</label>
+            <input id="command-input" name="command" type="text" inputmode="text" enterkeyhint="send" spellcheck="false" autocapitalize="none" aria-label="Terminal command" autofocus>
+          </form>
+        </div>
+      </div>
+    </section>
+    <p class="hint">Type <kbd>help</kbd> to explore · <kbd>↑</kbd>/<kbd>↓</kbd> command history · <a href="index.html">return to portfolio</a></p>
+  </main>
+  <script src="js/terminal.js" defer></script>
+</body>
+</html>
