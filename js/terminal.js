@@ -3,7 +3,7 @@
   const data = {
     about: "I'm Nikhil, a backend developer in Mumbai. I build backend systems, APIs and data workflows with Python, Django, FastAPI, REST and SQL, and add machine learning or LLM features where they improve the product. I currently intern at Publicis Groupe on Nestlé and Adobe projects.",
     skills: [
-      ['Languages','Python, Java, JavaScript, SQL, C'],['Backend','Django, Django REST, Flask, FastAPI, Node.js, Webhooks, Shopify, Prometheus, Grafana'],['Frontend','React, Next.js, Tailwind, Bootstrap, Mantine UI'],['Databases','PostgreSQL, MySQL, MongoDB, SQLite, Microsoft SQL Server'],['AI & data','Machine learning, deep learning, LLMs, Hugging Face, NumPy, Pandas, scikit-learn, Power BI'],['Tools','Git, GitHub, Docker, VS Code, PyCharm, IntelliJ, Jupyter, Google Colab']
+      ['Languages','Python, Java, JavaScript, SQL, C'],['Backend','Django, Django REST, Flask, FastAPI, Node.js, Webhooks, Shopify, Prometheus, Grafana'],['Frontend','React, Next.js, Tailwind, Bootstrap, Mantine UI'],['Databases','PostgreSQL, MySQL, MongoDB, SQLite, Microsoft SQL Server'],['AI & data','Machine learning, deep learning, LLMs, Hugging Face, NumPy, Pandas, scikit-learn, Power BI, MCP (model context protocol)'],['Tools','Git, GitHub, Docker, VS Code, PyCharm, IntelliJ, Jupyter, Google Colab']
     ],
     projects: [
       ['Rural telehealth platform','1st place, International UAi HAWK-ATHON 2026. FastAPI, PostgreSQL, Groq API and OpenRouter for low-bandwidth healthcare.'],
