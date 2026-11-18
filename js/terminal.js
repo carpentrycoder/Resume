@@ -78,29 +78,31 @@
     contact: {
       email: 'nikhilsutar621@gmail.com',
 
-      links: [
-        [
-          'LinkedIn',
-          'https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/'
-        ],
-        [
-          'GitHub',
-          'https://github.com/carpentrycoder/'
-        ],
-        [
-          'HackerRank',
-          'https://www.hackerrank.com/profile/nikhilsutar621'
-        ],
-        [
-          'X',
-          'https://x.com/CodingD47206'
-        ]
-      ]
-    },
+contact: {
+  email: 'nikhilsutar621@gmail.com',
 
-    resume:
-      'https://drive.google.com/file/d/1eUwFi7moJ_Qnt9lywDxv1v4DhQmSMSRX/view?usp=sharing'
-  };
+  links: [
+    [
+      'LinkedIn',
+      'https://www.linkedin.com/in/nikhil-sutar-b5471b2b7/'
+    ],
+    [
+      'GitHub',
+      'https://github.com/carpentrycoder/'
+    ],
+    [
+      'HackerRank',
+      'https://www.hackerrank.com/profile/nikhilsutar621'
+    ],
+    [
+      'X',
+      'https://x.com/CodingD47206'
+    ]
+  ]
+},
+
+resume:
+  'https://drive.google.com/file/d/1eUwFi7moJ_Qnt9lywDxv1v4DhQmSMSRX/view?usp=sharing'
 
   // =========================================================
   // DOM ELEMENTS
@@ -625,73 +627,59 @@
   // COMMAND RUNNER
   // =========================================================
 
-  function run(raw) {
-    const value =
-      raw.trim();
+function run(raw) {
+  const value = raw.trim();
 
-    if (!value) {
-      return;
-    }
+  if (!value) {
+    return;
+  }
 
-    const shown =
-      block('command');
+  const shown = block('command');
+
+  line(
+    shown,
+    `${currentPrompt()} ${value}`
+  );
+
+  history.push(value);
+  historyIndex = history.length;
+
+  const normalized = value
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+
+  if (normalized === 'os mac') {
+    setOS('mac');
+  }
+
+  else if (
+    normalized === 'os win' ||
+    normalized === 'os windows'
+  ) {
+    setOS('win');
+  }
+
+  else if (commands[normalized]) {
+    commands[normalized]();
+  }
+
+  else {
+    const b = block('error');
 
     line(
-      shown,
-      `${currentPrompt()} ${value}`
+      b,
+      `Command not found: ${value}`
     );
 
-    history.push(value);
-
-    historyIndex =
-      history.length;
-
-    const normalized =
-      value
-        .toLowerCase()
-        .replace(/\s+/g, ' ');
-
-    // macOS command
-    if (
-      normalized === 'os mac'
-    ) {
-      setOS('mac');
-    }
-
-    // Windows commands
-    else if (
-      normalized === 'os win' ||
-      normalized === 'os windows'
-    ) {
-      setOS('win');
-    }
-
-    // Standard commands
-    else if (
-      commands[normalized]
-    ) {
-      commands[normalized]();
-    }
-
-    // Invalid command
-    else {
-      const b =
-        block('error');
-
-      line(
-        b,
-        `Command not found: ${value}`
-      );
-
-      line(
-        b,
-        "Type 'help' to list available commands.",
-        'dim'
-      );
-    }
-
-    scroll();
+    line(
+      b,
+      "Type 'help' to list available commands.",
+      'dim'
+    );
   }
+
+  scroll();
+}
 
   // =========================================================
   // FORM SUBMIT
