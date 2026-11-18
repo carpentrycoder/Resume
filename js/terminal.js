@@ -124,7 +124,7 @@
   let os = 'mac';
 
   // =========================================================
-  // HELPER FUNCTIONS
+  // HELPERS
   // =========================================================
 
   const make = (tag, cls, text) => {
@@ -185,17 +185,20 @@
       : 'C:\\Users\\Nikhil>';
 
   // =========================================================
-  // SOCIAL LINK HELPER
+  // SOCIAL HELPERS
   // =========================================================
 
   const getSocialLink = (name) => {
-    const social = data.contact.links.find(
-      ([socialName]) =>
-        socialName.toLowerCase() ===
-        name.toLowerCase()
-    );
+    const social =
+      data.contact.links.find(
+        ([socialName]) =>
+          socialName.toLowerCase() ===
+          name.toLowerCase()
+      );
 
-    return social ? social[1] : null;
+    return social
+      ? social[1]
+      : null;
   };
 
   const openSocial = (
@@ -206,7 +209,8 @@
     const url =
       getSocialLink(socialName);
 
-    const b = block();
+    const b =
+      block();
 
     if (!url) {
       line(
@@ -275,11 +279,12 @@
         os
       );
     } catch (_) {
-      // Ignore unavailable localStorage
+      // localStorage unavailable
     }
 
     if (announce) {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -293,16 +298,13 @@
   }
 
   // =========================================================
-  // TERMINAL COMMANDS
+  // COMMANDS
   // =========================================================
 
   const commands = {
-    // -------------------------------------------------------
-    // HELP
-    // -------------------------------------------------------
-
     help() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -372,20 +374,18 @@
           'Return to main portfolio'
         ]
       ].forEach(
-        ([command, description]) =>
+        ([command, description]) => {
           line(
             b,
             `${command.padEnd(18)} ${description}`
-          )
+          );
+        }
       );
     },
 
-    // -------------------------------------------------------
-    // ABOUT
-    // -------------------------------------------------------
-
     about() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -399,12 +399,9 @@
       );
     },
 
-    // -------------------------------------------------------
-    // SKILLS
-    // -------------------------------------------------------
-
     skills() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -422,12 +419,9 @@
       );
     },
 
-    // -------------------------------------------------------
-    // PROJECTS
-    // -------------------------------------------------------
-
     projects() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -436,7 +430,10 @@
       );
 
       data.projects.forEach(
-        ([name, description], index) => {
+        (
+          [name, description],
+          index
+        ) => {
           line(
             b,
             `${index + 1}. ${name}`,
@@ -451,12 +448,9 @@
       );
     },
 
-    // -------------------------------------------------------
-    // EXPERIENCE
-    // -------------------------------------------------------
-
     experience() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -465,7 +459,13 @@
       );
 
       data.experience.forEach(
-        ([role, period, description]) => {
+        (
+          [
+            role,
+            period,
+            description
+          ]
+        ) => {
           line(
             b,
             role,
@@ -491,12 +491,9 @@
       );
     },
 
-    // -------------------------------------------------------
-    // EDUCATION
-    // -------------------------------------------------------
-
     education() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -516,12 +513,9 @@
       );
     },
 
-    // -------------------------------------------------------
-    // CONTACT
-    // -------------------------------------------------------
-
     contact() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -557,10 +551,6 @@
       );
     },
 
-    // -------------------------------------------------------
-    // LINKEDIN
-    // -------------------------------------------------------
-
     linkedin() {
       openSocial(
         'LinkedIn',
@@ -568,10 +558,6 @@
         'Open Nikhil Sutar on LinkedIn'
       );
     },
-
-    // -------------------------------------------------------
-    // GITHUB
-    // -------------------------------------------------------
 
     github() {
       openSocial(
@@ -581,10 +567,6 @@
       );
     },
 
-    // -------------------------------------------------------
-    // HACKERRANK
-    // -------------------------------------------------------
-
     hackerrank() {
       openSocial(
         'HackerRank',
@@ -592,10 +574,6 @@
         'Open Nikhil Sutar on HackerRank'
       );
     },
-
-    // -------------------------------------------------------
-    // X / TWITTER
-    // -------------------------------------------------------
 
     x() {
       openSocial(
@@ -605,12 +583,9 @@
       );
     },
 
-    // -------------------------------------------------------
-    // RESUME
-    // -------------------------------------------------------
-
     resume() {
-      const b = block();
+      const b =
+        block();
 
       line(
         b,
@@ -631,25 +606,13 @@
       );
     },
 
-    // -------------------------------------------------------
-    // CLEAR
-    // -------------------------------------------------------
-
     clear() {
       output.replaceChildren();
     },
 
-    // -------------------------------------------------------
-    // CLS
-    // -------------------------------------------------------
-
     cls() {
       commands.clear();
     },
-
-    // -------------------------------------------------------
-    // EXIT
-    // -------------------------------------------------------
 
     exit() {
       window.location.assign(
@@ -688,44 +651,48 @@
         .toLowerCase()
         .replace(/\s+/g, ' ');
 
-    // --------------------------------------
-    // OS COMMANDS
-    // --------------------------------------
+    // macOS command
+    if (
+      normalized === 'os mac'
+    ) {
+      setOS('mac');
+    }
 
-if (normalized === 'os mac') {
-  setOS('mac');
-}
+    // Windows commands
+    else if (
+      normalized === 'os win' ||
+      normalized === 'os windows'
+    ) {
+      setOS('win');
+    }
 
-else if (
-  normalized === 'os win' ||
-  normalized === 'os windows'
-) {
-  setOS('win');
-}
+    // Standard commands
+    else if (
+      commands[normalized]
+    ) {
+      commands[normalized]();
+    }
 
-else if (
-  commands[normalized]
-) {
-  commands[normalized]();
-}
+    // Invalid command
+    else {
+      const b =
+        block('error');
 
-else {
-  const b = block('error');
+      line(
+        b,
+        `Command not found: ${value}`
+      );
 
-  line(
-    b,
-    `Command not found: ${value}`
-  );
+      line(
+        b,
+        "Type 'help' to list available commands.",
+        'dim'
+      );
+    }
 
-  line(
-    b,
-    "Type 'help' to list available commands.",
-    'dim'
-  );
-}
+    scroll();
+  }
 
-scroll();
-    
   // =========================================================
   // FORM SUBMIT
   // =========================================================
@@ -812,7 +779,7 @@ scroll();
   );
 
   // =========================================================
-  // KEEP TERMINAL INPUT FOCUSED
+  // KEEP INPUT FOCUSED
   // =========================================================
 
   screen.addEventListener(
@@ -845,11 +812,11 @@ scroll();
       os = saved;
     }
   } catch (_) {
-    // Ignore unavailable localStorage
+    // localStorage unavailable
   }
 
   // =========================================================
-  // INITIALIZE TERMINAL
+  // INITIALIZE
   // =========================================================
 
   setOS(
